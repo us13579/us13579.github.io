@@ -285,6 +285,7 @@ defaults:
       path: ""
       types: pages
     values:
+      classes : wide
       layout: single
       author_profie: true
       toc: true
