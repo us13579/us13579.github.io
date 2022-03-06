@@ -155,7 +155,7 @@ JavaScript는 <a style="color:red"><strong>낙타 표기법 ( Camel case )</stro
 
 <br>
 undefined가 var로 변수를 선언했을 때 주의해야할 부분이다.<br>
-이 부분은 밑에 <strong>변수 호이스팅</strong>에서 설명 하겠다.
+이 부분은 밑에 <a href="#hoisting"><strong>변수 호이스팅</strong></a>에서 설명 하겠다.
 
 ### 자료형 -  <a style="color:#00adb5">숫자</a> 
 정수와 실수를 구분하지 않는다.<br>
@@ -272,7 +272,7 @@ test = true;
 console.log(typeof test);       // boolean
 ```
 
-## <a style="color:#00adb5">JAVASCRIPT</a> 변수 호이스팅 ( Variable Hoisting )
+## <a style="color:#00adb5" id="hoisting">JAVASCRIPT</a> 변수 호이스팅 ( Variable Hoisting )
 var 키워드를 사용한 변수는 중복해서 선언이 가능하다.<br>
 호이스팅이란 <a style="color:red"><strong>var 선언문이나 function 선언문 등 모든 선언문이 해당 범위의 처음으로 옮겨진 것처럼 동작하는 특성</strong></a>이다.<br>
 즉 JS는 모든 선언문이 선언되기 이전에 참고가 가능하다.<br><br>
@@ -326,16 +326,16 @@ const SELECTED = false;
 - typeof
 피연산자 타입을 리턴
 
-- ==
+- ==<br>
 동등한 <strong>관계</strong>인지 확인
 
-- !=
+- !=<br>
 동등하지 않은 <strong>관계</strong>인지 확인
 
-- ===
+- ===<br>
 <strong>값이 일치</strong>하는지 확인
 
-- !==
+- !==<br>
 <strong>값이 관계</strong>하지 않는지 확인
 
 ## <a style="color:#00adb5">JAVASCRIPT</a> 조건문, 반복문 ( conditional, loop )
@@ -349,11 +349,163 @@ for(var 변수 in 배열 or 객체){
     //변수에는 배열의 인덱스
     //객체의 프로퍼티 명이 담김
 }
+```
 
+## <a style="color:#00adb5">JAVASCRIPT</a> 객체 ( object )
+
+- 객체는 이름과 값으로 구성된 Property ( 필드 ( 데이터 멤버 )와 메서드 간 기능의 중간인 클래스 멤버의 특수한 유형 ) 의 집합
+- 문자열, 숫자, boolean, null, undefined를 제외한 모든 값은 객체이다.
+- JS 객체는 Key 와 Value 로 구성된 프로퍼티 들의 집합이다.
+- 전역 객체를 제외하고 JS 객체는 동적으로 추가하거나 삭제 가능하다.
+- 프로퍼티의 값으로 함수를 사용 가능하다.
+- JS 객체는 Prototype 이라는 특별한 프로퍼티를 포함한다.
+
+
+### 객체 - <a style="color:#00adb5">생성</a>
+객체를 생성하는 방법에는 3가지가 있다.<br>
+객체 리터럴, Object 생성자 함수, 생성자 함수<br>
+
+#### 객체 리터럴
+- 가장 일반적인 방법
+- <a style="color:red"><strong>{}를 사용하여 객체를 생성.</strong></a> {} 내에 1개 이상의 프로퍼티를 추가하여 객체를 생성
+
+```javascript
+var student ={
+    name : '김수지',
+    area : '구미',
+    classNum : 4,
+    info: function(){
+        console.log(this.name + '는' + this.area + this.classNum + '반' );
+    },
+};
+
+console.log(typeof student);        // object
+console.log(student);               // {name: '김수지', area: '구미', classNum: 4, info: f}
+student.info();                     // 김수지는 구미4반
+```
+
+#### Object 생성자 함수
+- <a style="color:red"><strong>new 연산자와 Object 생성자 함수를 호출</strong></a>하여 빈 객체를 생성
+- 빈 객체 생성 후 프로퍼티 또는 메서드를 추가하여 객체를 완성
+
+```javascript
+var student = new Object();
+// property 추기
+student.name = '김수지';
+student.area = '구미';
+student.classNum = 4;
+student.info = function(){
+    console.log(this.name + '는' + this.area + this.classNum + '반' );
+};
+
+console.log(typeof student);        // object
+console.log(student);               // {name: '김수지', area: '구미', classNum: 4, info: f}
+student.info();                     // 김수지는 구미4반
+```
+
+#### 생성자 함수
+- 동일한 프로퍼티를 갖는 객체 생성 시 위 두 방법은 동일한 코드를 반복적으로 작성
+- <a style="color:red"><strong>생성자 함수를 이용</strong></a>하면 템플릿(클래스)처럼 사용하여 프로퍼티가 동일한 객체 여러개를 간단히 생성 가능
+- 객체 지향적인 프로그램은 이 방법이 제일 선호 될 것 같다 !! ( 뇌피셜 )
+
+```javascript
+// 생성자 함수 - 반복적인 부분 처리
+function Student(name, area, classNum){
+    this.name = name;
+    this.area = area;
+    this.classNum = classNum;
+    this.info = function (){
+        console.log(this.name + '는' + this.area + this.classNum + '반' );
+    };
+}
+
+// 객체 생성
+var student1 = new Student('김수지', '구미', 4);
+var student2 = new Student('이수지', '서울', 7);
+
+console.log(typeof student1);        // object    
+console.log(typeof student2);        // object   
+
+console.log(student1);               // {name: '김수지', area: '구미', classNum: 4, info: f}
+console.log(student2);               // {name: '이수지', area: '서울', classNum: 7, info: f}
+
+student1.info();                     // 김수지는 구미4반
+student2.info();                     // 이수지는 서울7반
 ```
 
 
-## <a style="color:#00adb5">JAVASCRIPT</a> 객체 ( object )
+### 객체 - <a style="color:#00adb5">속성</a>
+
+#### 속성 값 조회
+- 객체는 <a style="color:red"><strong>dot(.)을 사용하거나 대괄호([])</strong></a>를 사용해서 속성 값에 접근한다. 대괄호 내에 들어가는 프로퍼티 이름은 반드시 문자열이여야 한다.
+- 객체에 없는 속성에 접근하면 undefined를 반환한다.
+
+```javascript
+var student ={
+    'name' : '김수지',
+    area : '구미',
+    classNum : 4    
+};
+
+// 객체 속성이 접근
+console.log(student.classNum);      // dot 표기법
+console.log(student["classNum"]);   // [] 표기법
+
+// 속성명에 연산자가 포함된 경우 []만 가능
+console.log(student.name);      // NaN
+console.log(student["name"]);   // 김수지
+```
+
+#### 속성 값 변경, 추가, 제거
+- 속성 값을 변경할 때는 <a style="color:red"><strong>dot(.)나 대괄호([])</strong></a>를 사용한다.
+- 객체에 값을 할당하는 경우 그 속성이 없을 때 알아서 속성이 추가된다.
+- delete 연산자를 이용하여 속성 제거
+
+```javascript
+var student ={
+    name : '김수지',
+    area : '구미',
+    classNum : 4    
+};
+
+// 속성의 값 변경
+student.classNum = 7;
+student['area'] = '서울';
+
+console.log(student.['classNum']);  // 7
+console.log(student.area);          // 서울
+
+// 속성 추가
+student.tel = '010-1234-5678';
+console.log(student.tel);           // 010-1234-5678
+
+// 속성 제거
+delete student.tel;
+console.log(student.tel);           // undefined
+```
+
+### 객체 - <a style="color:#00adb5">참조</a>
+- 객체는 복사되지 않고 참조된다.
+- JS에서 원시 ( Primitive ) 데이터 타입이 아닌 모든 값은 참조 타입이다.
+- 참조 타입은 Object , Array , Date , Error 를 포함한다.
+- 타입 확인 방법으로는 typeof가 있다. ( null은 원시타입이지만 typeof 연산자에서 object를 반환한다. )
+
+```javascript
+var student ={
+    name : '김수지',
+    area : '구미',
+    classNum : 4    
+};
+
+var x = student;
+x.area = '서울';
+console.log(x.area);        // 서울
+```
+
+### 객체 - <a style="color:#00adb5">분류</a>
+
+<p align="center"> <img src="./../../images/object.png"></p>
+
 
 ## <a style="color:#00adb5">JAVASCRIPT</a> 함수 ( function )
 JavaScript에서 함수는 <a style="color:red"><b>일급 객체(first-class)</b></a>이다.<br>
@@ -452,6 +604,9 @@ setTimeout(function () {
 ```
 
 ## <a style="color:#00adb5">JAVASCRIPT</a> 기본 마무리
-
+JavaScript의 기본을 정리해 보았다.<br>
+자바랑 비슷하면서도 좀 더 편리한 부분이 더 많은 것 같기도 하다.( JAVA랑 관련있다는 의미가 아니다. 나의 주 언어가 JAVA기 때문 )<br>
+HTML과 CSS와 같이 작동하며 더 완성도 있고 동적인 웹 페이지를 구현하는데 큰 일조를 하는 것 같아 더 흥미가 갔던 것 같다. 정리하면서도 크게 어려운 부분이 없어서 쉽게 이해할 수 있었다.<br>
+이제 JS의 많은 라이브러리와 프레임워크를 사용해 보면서 JS를 더 잘 다룰수 있게 해야겠다.
 
 
