@@ -17,6 +17,9 @@ docs:
         category: "BLOG"
   - title: "STUDY"    
     children: 
+    - title: "STUDY"
+      url: /category/STUDY/
+      category: "STUDY"
     - title: "ALGORITHM"
       url: /category/ALGORITHM/
       category: "ALGORITHM"
