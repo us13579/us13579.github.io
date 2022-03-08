@@ -196,7 +196,11 @@ console.log(new Number('1A'));  // NAN
 JS에서 문자열은 16bit의 Unicode 문자를 사용<br>
 문자 하나를 표현하는 char 같은 문자형은 존재하지 않는다. 'a' 도 문자열로 표현<br>
 작은 따옴표, 큰 따옴표 둘 다 사용가능이지만 혼용 불가능<br>
-이스케이프 시퀀스( \\ )도 사용 가능 ( 줄바꿈 )
+이스케이프 시퀀스( \\ )도 사용 가능 ( 줄바꿈 )<br>
+<strong>백틱(`)을 이용하여 문자열을 나타낼 수 있다 ( 코드를 보여주고 싶을 경우( 변수를 적을 수 있다 ) 백틱을 이용한다. )</strong>
+ex) var str1= `당신의 이름은 ${name} (${age})입니다.`;<br>
+    var str2= "당신의 이름은 " + name + "(" + age + ")입니다.";<br>
+    var1은 var2 와 같다.
 
 ```javascript   
 console.log("hello");           // hello
@@ -208,7 +212,7 @@ console.log("hello \nbye");     //hello
 
 ### 자료형 -  <a style="color:#00adb5">boolean, null, undefined</a> 
 - boolean은 결과값으로 true, false를 갖는다.
-- 비어 있는 문자열, null, undefined, 숫자 0은 false로 간주
+- <a style="color:red"><strong>비어 있는 문자열, null, undefined, 숫자 0은 false로 간주</strong></a>
 - null은 값이 없거나 비어있음을 의미
 - undefined는 값이 초기화 되지 않았음( 정의되지 않음 )을 의미
 - null과 undefined는 의미가 비슷하지만 <a style="color:red"><strong>값을 할당하지 않은 변수는 undefined가 할당되고 ( 시스템 레벨 ), 코드에서 명시적으로 값이 없을을 나타낼 때 ( 프로그램 레벨 )는 null을 사용</strong></a>한다.
@@ -233,14 +237,15 @@ JS는 자료 형에 매우 느슨한 규칙이 적용된다.<br>
 
 ```javascript
 var msg = 40;
-console.log("40" + msg);            // 4040;
-console.log("40" + 40);             // 80;
+console.log("message" + msg);            // 4040;
+console.log("40" - 10);             // 30;              -> '-'는 무조건 앞 뒤가 숫자여야하지만
+console.log("40" + 40);             // 4040;            -> '+' 는 문자열끼리도 덧셈을 해줄 수 있기 때문에 자동 형 변환이 안된다.
 
 console.log(parseInt(124.45)+1);    // 125
 console.log(parseFloat(124.45)+1);  // 125.45
 
 console.log("1.1" + "1.1");         // 1.11.1
-console.log(("+1.1") + ("+1.1"));         // 2.2
+console.log(("+1.1") + ("+1.1"));   // 2.2              -> 앞의 '+'가 양수라는 의미를 가진다.
 
 console.log("message " + msg);      // message 40
 msg = "hello";
@@ -307,6 +312,9 @@ JS는 블록 레벨의 스코프가 아닌 함수 레벨 스코프만 갖는다.
 -> 해결책은 <strong>const나 let을 사용</strong>하면 된다. <br>
 그래서 평소 변수 선언을 할 때도 요즘은 let을 사용하는 것이 추세이다.
 
+<br>
+var는 전역 변수, let,const는 지역 변수라고 생각하면 된다.
+
 
 
 ## <a style="color:#00adb5">JAVASCRIPT</a> 상수 ( constant )
@@ -323,20 +331,26 @@ const SELECTED = false;
 기존 JAVA 연산자랑 거의 비슷하다.<br>
 다른 것 ( 많이 사용 ) - 산술, 비교, 논리, 기타
 
-- typeof
+- delete<br>
+프로퍼티를 제거
+
+-in<br>
+프로퍼티가 존재하는지 확인 ( for문에서 쓰인다 )
+
+- typeof<br>
 피연산자 타입을 리턴
 
 - ==<br>
-동등한 <strong>관계</strong>인지 확인
+<strong>값이 일치</strong>하는지 확인 ( 타입 비교 X )
 
 - !=<br>
-동등하지 않은 <strong>관계</strong>인지 확인
+<strong>값이 관계</strong>하지 않는지 확인 ( 타입 비교 X )
 
 - ===<br>
-<strong>값이 일치</strong>하는지 확인
+<strong>값이 일치</strong>하는지 확인 ( 타입 포함 )
 
 - !==<br>
-<strong>값이 관계</strong>하지 않는지 확인
+<strong>값이 관계</strong>하지 않는지 확인 ( 타입 포함 )
 
 ## <a style="color:#00adb5">JAVASCRIPT</a> 조건문, 반복문 ( conditional, loop )
 기존 JAVA 연산자랑 거의 같다.<br>
@@ -356,7 +370,7 @@ for(var 변수 in 배열 or 객체){
 - 객체는 이름과 값으로 구성된 Property ( 필드 ( 데이터 멤버 )와 메서드 간 기능의 중간인 클래스 멤버의 특수한 유형 ) 의 집합
 - 문자열, 숫자, boolean, null, undefined를 제외한 모든 값은 객체이다.
 - JS 객체는 Key 와 Value 로 구성된 프로퍼티 들의 집합이다.
-- 전역 객체를 제외하고 JS 객체는 동적으로 추가하거나 삭제 가능하다.
+- 전역 객체를 제외하고 JS 객체는 <a style="color:red"><strong>동적으로 추가하거나 삭제 가능</strong></a>하다.
 - 프로퍼티의 값으로 함수를 사용 가능하다.
 - JS 객체는 Prototype 이라는 특별한 프로퍼티를 포함한다.
 
@@ -575,6 +589,7 @@ var plus = function(num1, num2){
 
 
 ### 함수 - <a style="color:#00adb5">콜백 함수</a>
+<a style="color:red"><strong>중 요 하 다 !!! </strong></a>
 콜백 함수란 <strong>함수를 명시적으로 호출하는 방식이 아닌 특정 이벤트가 발생했을 때 시스템에 의해 호출되는 함수</strong><br>
 일반적으로 콜백 함수는 매개변수를 통해 전달되고 전달받은 함수의 내부에서 어느 특정시점에 실행된다.<br>
 주로 비동기식 처리 모델에서 사용된다.<br>
@@ -587,7 +602,19 @@ var plus = function(num1, num2){
 <button id="btn">click!!</button>
 <script type="text/javascript">
     var btn = document.getElementById('btn');
-    btn.addEventListener('click', function (){
+    btn.addEventListener('click', function (){      // function()이 콜백 함수이다. 만약 여기에 직접 함수를 호출한다면 원하는 값을 출력 못함
+// ex ) btn.addEventListener('click', view(document.getElementById("test".).value));
+//  일반 함수
+//  function view(val){
+//  console.log(val);
+//}
+
+// ex) btn 위에 함수 선언은 가능
+// var callback = function(){
+//    view(document.getElementById("test".).value));
+//    }
+// btn.addEventListener('click', callback); 은 정상적으로 작동한다.
+
         console.log(' 안녕하세요');
     });
     </script>
@@ -607,6 +634,7 @@ setTimeout(function () {
 JavaScript의 기본을 정리해 보았다.<br>
 자바랑 비슷하면서도 좀 더 편리한 부분이 더 많은 것 같기도 하다.( JAVA랑 관련있다는 의미가 아니다. 나의 주 언어가 JAVA기 때문 )<br>
 HTML과 CSS와 같이 작동하며 더 완성도 있고 동적인 웹 페이지를 구현하는데 큰 일조를 하는 것 같아 더 흥미가 갔던 것 같다. 정리하면서도 크게 어려운 부분이 없어서 쉽게 이해할 수 있었다.<br>
-이제 JS의 많은 라이브러리와 프레임워크를 사용해 보면서 JS를 더 잘 다룰수 있게 해야겠다.
+이제 JS의 많은 라이브러리와 프레임워크를 사용해 보면서 JS를 더 잘 다룰수 있게 해야겠다.<br>
+그리고 콜백함수에 대해 잘 알고 있어야 겠다 !!
 
 
