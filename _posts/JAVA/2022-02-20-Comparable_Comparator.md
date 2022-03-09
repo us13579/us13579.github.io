@@ -10,7 +10,7 @@ sidebar:
 
 ---
 
-# <a style="color:#00adb5">Comparable & Comparator</a> 
+# 📚 <a style="color:#00adb5">Comparable & Comparator</a> 
 Comparable 과 Comparator 는 모두 <a style="color:red"><b>객체를 비교할 수 있게 해주는 Interface</b></a> 이다.<br>
 그래서 Comparable 이나 Comparator 를 사용하고자 한다면 인터페이스 내에 선언된 메서드를 <a style="color:red"><b>반드시 구현</b></a>해야 한다 !
 <br><br>
