@@ -10,9 +10,9 @@ sidebar:
 
 ---
 
-# <a style="color:#00adb5"><b>Exception Handling</b></a>
+# 📚 <a style="color:#00adb5"><b>Exception Handling</b></a>
 
-## Exception Handling 란 무엇일까?
+## <a style="color:#00adb5"><b>Exception Handling</b></a> 란 무엇일까?
 
 ### <a style="color:#00adb5"><b>예외 처리</b></a>
 예외처리를 알기 전 에러와 예외의 차이를 알 필요가 있다.<br>

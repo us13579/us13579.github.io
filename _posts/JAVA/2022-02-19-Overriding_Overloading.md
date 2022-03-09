@@ -9,7 +9,7 @@ sidebar:
     nav: "docs"
 
 ---
-# <a style="color:#00adb5">오버라이딩 ( Overriding ) vs 오버로딩 ( Overloading )</a>
+# 📚 <a style="color:#00adb5">오버라이딩 ( Overriding ) vs 오버로딩 ( Overloading )</a>
 
 ## <a style="color:#00adb5">오버라이딩 ( Overriding )</a>
 

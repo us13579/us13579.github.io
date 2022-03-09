@@ -9,7 +9,7 @@ sidebar:
     nav: "docs"
 ---
 
-# <a style="color:#00adb5">CSS</a>
+# 📚 <a style="color:#00adb5">CSS</a>
 <b>웹 문서를 구성하는 3가지 요소</b>
 <a style="color:red"><b>웹 페이지 디자인 담당 ( 표 현 )</b></a><br>
 <p align="center"><img src="./../../images/hcj.png"></p>

@@ -9,9 +9,9 @@ sidebar:
     nav: "docs"
 ---
 
-# <a style="color:#00adb5">Abstract Class</a>
+# 📚 <a style="color:#00adb5">Abstract Class</a>
 
-## 추상 클래스란 무엇인가 ?
+## <a style="color:#00adb5"><b>추상 클래스</b></a>란 무엇인가 ?
 ### <b><a style="color:#00adb5">Abstract Class</a></b>
 추상 클래스는 <b><a style="color:red">상속 전용의 클래스이다.</a></b><br>
 추상 클래스는 실체클래스의 공통적인 부분(변수, 메서드)을 추출하여 선언한 클래스이다. <br>
