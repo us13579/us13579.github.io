@@ -24,7 +24,7 @@ description              : "JS's Development BLOG"
 url                      : "https://us13579.github.io"  # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+teaser                   :  # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs              : true  # true, false (default)
@@ -38,7 +38,7 @@ comments:
   facebook:
     # https://developers.facebook.com/docs/plugins/comments
     appid                :
-    num_posts            : # 5 (default)
+    num_posts            : 10  # (default)
     colorscheme          : "dark" # "light" (default), "dark"
   utterances:
     theme                : # "github-light" (default), "github-dark"
@@ -103,7 +103,7 @@ analytics:
 # Site Author
 author:
   name             : "Kim Ji Soo :blush: "
-  avatar           : /assets/images/js2.jpg # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : ./asserts/images/js2.jpg # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "JS's Development BLOG"
   location         : "Korea/Daegu"
   email            : 

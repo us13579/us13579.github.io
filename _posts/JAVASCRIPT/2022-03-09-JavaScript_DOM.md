@@ -20,6 +20,8 @@ sidebar:
 - HTML 계층 구조의 제일 위에는 document 노드가 있다.
 - 그 아래로 HTML 태그나 요소들을 포함하는 노드와 문자열을 포함하는 노드가 있다.
 
+<br>
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -58,6 +60,8 @@ text node를 생성한다.
 - <strong>appendChild(node)</strong><br>
 객체에 node를 child로 추가한다.
 
+<br>
+
 ```javascript
 // 윈도우 페이지가 열리면 함수 실행 한다는 의미이다.
     window.onload = function(){
@@ -80,6 +84,8 @@ text node를 생성한다.
 
 - <strong>getAttribute(name)</strong><br>
 객체의 속성값을 가져온다.
+
+<br>
 
 ```javascript
 // 윈도우 페이지가 열리면 함수 실행 한다는 의미이다.
@@ -114,6 +120,8 @@ window.onload = function(){
 - <strong>innerText</strong><br>
 문자열을 text node로 삽입한다.
 
+<br>
+
 ```javascript
 window.onload = function(){
         var html = document.getElementById('divHtml');        
@@ -136,6 +144,8 @@ window.onload = function(){
 - getElementById(id)<br>
 태그의 <strong>id</strong> 속성이 id 와 일치하는 element <a style="color:red">객체</a> 얻기
 
+<br>
+
 ```html
 <script type="text/javascript">
     window.onload = function(){
@@ -157,6 +167,8 @@ window.onload = function(){
 - getElementsByClassName(classname)<br>
 태그의 <strong>classname</strong> 속성이 classname 과 일치하는 element <a style="color:red">배열</a>  얻기
 
+<br>
+
 ```html
 <script type="text/javascript">
     window.onload = function(){
@@ -176,6 +188,8 @@ window.onload = function(){
 
 - getElementsByTagName(tagname)<br>
 태그이름이 <strong>tagname</strong> 과 일치하는 element <a style="color:red">배열</a>  얻기
+
+<br>
 
 ```html
 <script type="text/javascript">
@@ -199,7 +213,11 @@ window.onload = function(){
 태그의 <strong>name</strong> 속성이 name 과 일치하는 element <a style="color:red">배열</a>  얻기
 
 - querySelector(selector)<br>
-<strong>selector</strong>에 일치하는 첫번째 element <a style="color:red">객체</a> 얻기
+<strong>selector</strong>에 일치하는 첫번째 element <a style="color:red">객체</a> 얻기<br>
+class 는 querySelector('.className');<br>
+id 는 querySelector('#IDName');<br>
+대문자로 받는 방법은 querySelector('h2[id=head]'); 이 있다. 이 경우는 이름에 언더바가 있는 경우에 사용한다.
+<br>
 
 ```html
 <script type="text/javascript">
@@ -220,6 +238,8 @@ window.onload = function(){
 
 - querySelectorAll(selector)<br>
 <strong>selector</strong>에 일치하는 모든 element <a style="color:red">배열</a> 얻기
+
+<br>
 
 ```html
 <script type="text/javascript">
@@ -246,6 +266,8 @@ window.onload = function(){
 
 - <strong>removeChild(childnode)</strong><br>
 객체의 자식 노드를 제거한다.
+
+<br>
 
 ```html
 <head>
