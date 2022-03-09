@@ -9,7 +9,7 @@ sidebar:
     nav: "docs"
 ---
 
-# <a style="color:#00adb5">순열 / 조합 / 부분 집합</a>
+# 📚 <a style="color:#00adb5">순열 / 조합 / 부분 집합</a>
 
 ## <a style="color:#00adb5">순열 ( Permutation ) </a>이란 무엇인가 ?
 <b><a style="color:red">서로 다른 것들 중 몇 개를 뽑아서 한 줄로 나열하는 것</a></b><br>
