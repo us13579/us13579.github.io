@@ -9,7 +9,7 @@ sidebar:
     nav: "docs"
 ---
 
-# <a style="color:#00adb5">QUEUE & LIST</a>
+# 📚 <a style="color:#00adb5">QUEUE & LIST</a>
 
 ## <a style="color:#00adb5">QUEUE</a>란 무엇인가 ?
 <p align="center"><img src="./../../images/QUEUE.gif"></p><br>
