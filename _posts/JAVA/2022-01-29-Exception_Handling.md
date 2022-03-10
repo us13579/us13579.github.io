@@ -239,5 +239,5 @@ FruitNotFoundException 이라는 사용자 정의 예외 클래스를 만들었�
 좋은 프로그램은 예외 처리가 잘 되어있어야 한다 😏
 
 <br><br><br><br>
-참조<br>
+👏 참조<br>
 <a href="https://rebeccacho.gitbooks.io/java-study-group/content/chapter8.html" target=_blank>https://rebeccacho.gitbooks.io/java-study-group/content/chapter8.html</a>

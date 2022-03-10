@@ -98,5 +98,5 @@ Singleton 패턴을 사용함으로서 메모리 낭비 방지와 데이터를 �
 
 
 <br><br><br><br>
-참조<br>
+👏 참조<br>
 <a href="https://jeong-pro.tistory.com/86" target=_blank>https://jeong-pro.tistory.com/86</a><br>
