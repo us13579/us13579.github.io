@@ -100,6 +100,6 @@ public interface face{
 
 <br><br><br><br>
 
-참조<br>
+👏 참조<br>
 <a href="https://limkydev.tistory.com/197?category=957527" target=_blank>https://limkydev.tistory.com/197?category=957527</a>
 <a href="http://www.tcpschool.com/java/java_polymorphism_interface" target=_blank>http://www.tcpschool.com/java/java_polymorphism_interface</a>

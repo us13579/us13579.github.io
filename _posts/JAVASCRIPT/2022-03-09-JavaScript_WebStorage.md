@@ -133,5 +133,6 @@ function init(){
 - sessionStorage의 경우 동일한 세션에서만 사용 가능하지만 localStorage는 세션이 끊기거나 동일한 세션이 아니더라도 사용 가능
 
 
-
 ## <a style="color:#00adb5">Web Storage</a> 마무리
+localStorage와 sessionStorage에 대해 알아 보았다.<br>
+데이터를 로컬에 저장해 자유롭게 사용하고 자바스크립트를 디버깅할 때도 유용하게 쓰일 것 같다 라는 생각이 들었다.

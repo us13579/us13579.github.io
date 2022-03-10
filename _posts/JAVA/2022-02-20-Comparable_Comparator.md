@@ -220,5 +220,5 @@ Comparable과 Comparator은 객체들을 비교하고자 한다면 필수요소�
 그리고 마지막 한 가지 주의할 점은 Comparable 과 Comparator 를 구현할 때 Overflow와 Underflow를 꼭 고려하여야 한다 !!
 
 <br><br><br><br>
-참조<br>
+👏 참조<br>
 <a href="https://st-lab.tistory.com/243" target=_blank>https://st-lab.tistory.com/243</a><br>
