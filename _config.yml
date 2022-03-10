@@ -21,6 +21,7 @@ title_separator          : "-"
 subtitle                 : "Don't Give Up" # site tagline that appears below site title in masthead
 name                     : "Kim Ji Soo "
 description              : "JS's Development BLOG"
+                        
 url                      : "https://us13579.github.io"  # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -103,8 +104,8 @@ analytics:
 # Site Author
 author:
   name             : "Kim Ji Soo :blush: "
-  avatar           : ./asserts/images/js2.jpg # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "JS's Development BLOG"
+  avatar           : ./assets/images/js2.jpg # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "고수는 인생이 놀이터다 👊"
   location         : "Korea/Daegu"
   email            : 
   links:
