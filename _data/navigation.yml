@@ -35,6 +35,9 @@ docs:
     - title: "JAVA SCRIPT"
       url: /category/JAVASCRIPT/
       category: "JAVASCRIPT"
+    - title: "DATABASE"
+      url: /category/DATABASE/
+      category: "DATABASE"
   - title: "Coding Test"
     children:
       - title: "BOJ"
