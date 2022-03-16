@@ -264,8 +264,175 @@ from dual;
 ```
 
 ### <a style="color:#00adb5">날짜 관련 함수</a>
+- <a style="color:#00adb5"><strong>NOW() or SYSDATE() or CURRENT_TIMESTAMP()</strong></a><br>
+<a style="color:red"><strong>현재 날짜와 시간 리턴</strong></a>
 
+```sql
+- 2022-03-16 21:09:17 2022-03-16 21:09:17 2022-03-16 21:09:17
 
+select NOW(), SYSDATE(), CURRENT_TIMESTAMP()
+from dual;
+```
+
+- <a style="color:#00adb5"><strong>CURDATE() or CURRENT_DATE()</strong></a><br>
+<a style="color:red"><strong>현재 날짜 리턴</strong></a>
+
+```sql
+- 2022-03-16 2022-03-16 
+
+select CURDATE(), CURRENT_DATE()
+from dual;
+```
+
+- <a style="color:#00adb5"><strong>CURTIME() or CURRENT_TIME()</strong></a><br>
+<a style="color:red"><strong>현재 시간 리턴</strong></a>
+
+```sql
+- 21:09:17 21:09:17
+
+select CURTIME() or CURRENT_TIME()
+from dual;
+```
+
+- <a style="color:#00adb5"><strong>DATE_ADD(날짜, INTERVAL 기준 값)</strong></a><br>
+<a style="color:red"><strong>날짜에서 기준 값 만큼 더한다</strong></a>
+
+```sql
+- 23:09:17
+
+select DATE_ADD(now(), INTERVAL 2 hour)
+from dual;
+```
+
+- <a style="color:#00adb5"><strong>DATE_SUB(날짜, INTERVAL 기준 값)</strong></a><br>
+<a style="color:red"><strong>날짜에서 기준 값 만큼 뺀다</strong></a>
+
+```sql
+- 18:09:17
+
+select DATE_SUB(now(), INTERVAL 2 hour)
+from dual;
+```
+
+- <a style="color:#00adb5"><strong>YEAR(날짜)</strong></a><br>
+<a style="color:red"><strong>날짜의 연도 리턴</strong></a>
+
+```sql
+- 2022
+
+select YEAR(now())
+from dual;
+```
+
+- <a style="color:#00adb5"><strong>MONTH(날짜)</strong></a><br>
+<a style="color:red"><strong>날짜의 월 리턴</strong></a>
+
+```sql
+- 3
+
+select MONTH(now())
+from dual;
+```
+
+- <a style="color:#00adb5"><strong>MONTHNAME(날짜)</strong></a><br>
+<a style="color:red"><strong>날짜의 월을 영어로 리턴</strong></a>
+
+```sql
+- March
+
+select MONTHNAME(now())
+from dual;
+```
+
+- <a style="color:#00adb5"><strong>DAYNAME(날짜)</strong></a><br>
+<a style="color:red"><strong>날짜의 요일을 영어로 리턴</strong></a>
+
+```sql
+- Wednesday
+
+select DAYNAME(now())
+from dual;
+```
+
+- <a style="color:#00adb5"><strong>DAYOFMONTH(날짜)</strong></a><br>
+<a style="color:red"><strong>날짜의 월별 일자 리턴</strong></a>
+
+```sql
+- 16
+
+select DAYOFMONTH(now())
+from dual;
+```
+
+- <a style="color:#00adb5"><strong>DAYOFWEEK(날짜)</strong></a><br>
+<a style="color:red"><strong>날짜의 주별 일자 리턴</strong></a>[일요일(1),월요일(2)..토요일(7)]
+
+```sql
+- 4
+
+select DAYOFWEEK(now())
+from dual;
+```
+
+- <a style="color:#00adb5"><strong>WEEKDAY(날짜)</strong></a><br>
+<a style="color:red"><strong>날짜의 주별 일자 리턴</strong></a>[월요일(0),화요일(1)..일요일(6)]
+
+```sql
+- 2
+
+select WEEKDAY(now())
+from dual;
+```
+
+- <a style="color:#00adb5"><strong>DAYOFYEAR(날짜)</strong></a><br>
+<a style="color:red"><strong>일년을 기준으로 한 날짜까지의 일 수</strong></a>(365일중 x일)
+
+```sql
+- 75
+
+select DAYOFYEAR(now())
+from dual;
+```
+
+- <a style="color:#00adb5"><strong>WEEK(날짜)</strong></a><br>
+<a style="color:red"><strong>일년 중 몇 번째 주</strong></a>
+
+```sql
+- 11
+
+select WEEK(now())
+from dual;
+```
+
+- <a style="color:#00adb5"><strong>FROM_DAYS(날수)</strong></a><br>
+<a style="color:red"><strong>00년 00월 00일부터 날 수 만큼 경과한 날의 날짜 리턴</strong></a>
+
+- <a style="color:#00adb5"><strong>TO_DAYS(날짜)</strong></a><br>
+<a style="color:red"><strong>00년 00월 00일부터 날짜까지의 일자 수 리턴</strong></a>
+
+- <a style="color:#00adb5"><strong>DATE_FORMAT(날짜, '형식')</strong></a><br>
+<a style="color:red"><strong>날짜를 형식에 맞게 리턴</strong></a>
+
+```sql
+- 2202 March 16 PM 09 09 17
+
+select data_format(now(),'%Y %M %e %p %l %i %S')
+from dual;
+```
+
+#### <a style="color:#00adb5">날짜 형식</a>
+
+|format|description|format|description|format|description|
+|------|-----------|------|-----------|------|-----------|
+|%Y|년, 2020|%y|년, 20|
+|%b|월, Jan..Dec|%M|월, January..December|%m|월, 01,02..12|
+|%d|일, 00, 01, 02 .. 31|%e|일, 0, 1, 2 .. 31|
+|%a|요일, Sun .. Sat|%W|요일, Sunday..Saturday|%w|요일, 0:일요일 .. 6:토요일|
+|%p|AM or PM|%H|
+|%H|시간, 01, 02 .. 23|%h|시간, 01, 02 .. 12|%l(알파벳 L 소문자)|시간, 01, 02 .. 12|
+|%k|시간, 0, 1, 2 .. 23|%I(알파벳 i 대문자)|시간, 1,2 .. 12|%T|시간, 24-hours(hh:mm:ss)
+|%i|분, 00..59|%S|초, 00..59|%s|초, 00..59|
+|%j|1년중 X일, 001..365|
 
 ### <a style="color:#00adb5">논리 관련 함수</a>
 
