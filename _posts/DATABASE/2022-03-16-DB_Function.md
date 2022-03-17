@@ -518,3 +518,10 @@ select max(salary) 최대급여, min(salary) 최소급여
 from employees
 where department_id = 80;
 ```
+
+## <a style="color:#00adb5">DATABASE</a> FUNCTION 마무리
+DB에서 사용하는 함수에 대해 알아보았다.<br>
+거의 JAVA에서 사용하던 것과 비슷해서 어려움은 없었다.<br>
+날짜 관련 함수나 NULLIF, IFNULL 같은 경우는 좀 헷갈리긴 했다.<br>
+함수들 중에서도 자주 사용되는 것들이 있으니 잘 기억해서 사용해야 할 것 같다.<br>
+그리고 함수를 JAVA에서 조건을 주는 것보다 MYSQL FUNCTION을 사용해서 주는게 더 유용하다고 하니 잘 알아두면 좋을 것 같다.
