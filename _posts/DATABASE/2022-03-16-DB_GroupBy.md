@@ -128,3 +128,9 @@ from table_name2
 #### <a style="color:#00adb5">MINUS </a>
 하나의 쿼리에서 다른 하나의 쿼리를 제거. 첫번째 쿼리에만 있는 내용을 출력<br>
 <a style="color:red"><strong>차집합</strong></a>
+
+## <a style="color:#00adb5">DATABASE</a> Group by 마무리
+SQL 문에서의 Group by 절에 대해 공부해 보았다.<br>
+그룹을 만들고 HAVING 절로 조건을 추가하는 구조이다.<br>
+가져오고 싶은 데이터가 무엇인지에 따라 그룹화 해야하는 것이 다르기 때문에 잘 파악해서 사용해야 한다.<br>
+그리고 연산자도 쓰일 때가 종종 있으니 잘 알고있으면 좋을 것 같다.
