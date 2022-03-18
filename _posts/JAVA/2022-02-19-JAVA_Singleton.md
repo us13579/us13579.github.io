@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "Singleton 디자인 패턴"
+title:  "JAVA_Singleton Pattern"
 categories: 
     - JAVA
 tags: 
@@ -10,7 +10,14 @@ sidebar:
 
 ---
 
-# 📚 <a style="color:#00adb5">Singleton Pattern</a> 
+# 📚 <a style="color:#00adb5">JAVA</a>
+
+<center>
+<img width="90%" src="./../../images/java.png">
+</center>
+<br>
+
+# 📚 <a style="color:#00adb5">Singleton Pattern</a>
 
 ## <a style="color:#00adb5">Singleton Pattern</a> 이란 무엇일까?
 <a style="color:red"><b>애플리케이션이 시작될 때 어떤 클래스가 최초 한번만 메모리를 할당하고(static) 그 메모리에 인스턴스를 만들어 사용하는 디자인패턴.</b></a><br>

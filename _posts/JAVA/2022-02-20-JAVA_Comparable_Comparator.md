@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "Comparable & Comparator"
+title:  "JAVA_Comparable & Comparator"
 categories: 
     - JAVA
 tags: 
@@ -10,7 +10,17 @@ sidebar:
 
 ---
 
-# 📚 <a style="color:#00adb5">Comparable & Comparator</a> 
+# 📚 <a style="color:#00adb5">JAVA</a>
+
+<center>
+<img width="90%" src="./../../images/java.png">
+</center>
+<br>
+
+# 📚 <a style="color:#00adb5">Comparable & Comparator</a>
+
+
+## <a style="color:#00adb5">Comparable & Comparator</a>
 Comparable 과 Comparator 는 모두 <a style="color:red"><b>객체를 비교할 수 있게 해주는 Interface</b></a> 이다.<br>
 그래서 Comparable 이나 Comparator 를 사용하고자 한다면 인터페이스 내에 선언된 메서드를 <a style="color:red"><b>반드시 구현</b></a>해야 한다 !
 <br><br>
@@ -200,8 +210,6 @@ Comparable과 구조는 거의 비슷하다.<br>
 
 '내림 차순' 으로 하고 싶다면 부호를 반대로 해주면 된다 .<br>
 그리고 좀 더 쉽게 이해를 하려면 선행 원소의 값은 작다고 가정하고 후행 원소의 값은 크다고 가정하고 음수, 양수 관계를 이해하면 된다. 
-
-
 
 
 

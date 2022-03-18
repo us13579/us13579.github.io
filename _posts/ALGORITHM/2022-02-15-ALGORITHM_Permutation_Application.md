@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "순열 / 조합 / 부분 집합 응용"
+title:  "ALGORITHM_순열 / 조합 / 부분 집합 응용"
 categories: 
     - ALGORITHM
 tags: 
@@ -8,6 +8,13 @@ tags:
 sidebar:
     nav: "docs"
 ---
+
+# 📚 <a style="color:#00adb5">ALGORITHM</a>
+
+<center>
+<img width="90%" src="./../../images/algorithm.png">
+</center>
+<br>
 
 # 📚 <a style="color:#00adb5">순열 응용</a>
 

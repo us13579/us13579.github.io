@@ -1,18 +1,25 @@
 ---
 layout: single
-title:  "Exception Handling ( 예외 처리 )"
+title:  "JAVA_Exception Handling ( 예외 처리 )"
 categories: 
     - JAVA
 tags: 
     - [2022-01, JAVA, STUDY]
 sidebar:
     nav: "docs"
-
 ---
 
-# 📚 <a style="color:#00adb5"><b>Exception Handling</b></a>
+# 📚 <a style="color:#00adb5">JAVA</a>
 
-## <a style="color:#00adb5"><b>Exception Handling</b></a> 란 무엇일까?
+<center>
+<img width="90%" src="./../../images/java.png">
+</center>
+<br>
+
+# 📚 <a style="color:#00adb5">Exception Handling ( 예외 처리 )</a>
+
+
+## <a style="color:#00adb5"><b>Exception Handling ( 예외 처리 )</b></a> 란 무엇일까?
 
 ### <a style="color:#00adb5"><b>예외 처리</b></a>
 예외처리를 알기 전 에러와 예외의 차이를 알 필요가 있다.<br>

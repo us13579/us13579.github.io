@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "Overriding vs Overloading"
+title:  "JAVA_Overriding & Overloading"
 categories: 
     - JAVA
 tags: 
@@ -9,7 +9,15 @@ sidebar:
     nav: "docs"
 
 ---
-# 📚 <a style="color:#00adb5">오버라이딩 ( Overriding ) vs 오버로딩 ( Overloading )</a>
+
+# 📚 <a style="color:#00adb5">JAVA</a>
+
+<center>
+<img width="90%" src="./../../images/java.png">
+</center>
+<br>
+
+# 📚 <a style="color:#00adb5">Overriding & Overloading</a>
 
 ## <a style="color:#00adb5">오버라이딩 ( Overriding )</a>
 

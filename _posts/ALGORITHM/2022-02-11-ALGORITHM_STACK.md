@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "STACK ( 스택 )"
+title:  "ALGORITHM_STACK ( 스택 )"
 categories: 
     - ALGORITHM
 tags: 
@@ -8,6 +8,13 @@ tags:
 sidebar:
     nav: "docs"
 ---
+
+# 📚 <a style="color:#00adb5">ALGORITHM</a>
+
+<center>
+<img width="90%" src="./../../images/algorithm.png">
+</center>
+<br>
 
 # 📚 <a style="color:#00adb5">STACK</a>
 

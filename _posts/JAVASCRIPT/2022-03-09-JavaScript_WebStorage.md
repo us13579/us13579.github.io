@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "JAVASCRIPT Web Storage"
+title:  "JAVASCRIPT_Web Storage"
 categories: 
     - JAVASCRIPT
 tags: 
@@ -10,9 +10,13 @@ sidebar:
 ---
 
 # 📚 <a style="color:#00adb5">JAVASCRIPT</a>
-<b>웹 문서를 구성하는 3가지 요소</b>
-<a style="color:red"><b>웹 페이지 이벤트 담당 ( 동 작 )</b></a><br>
-<p align="center"><img src="./../../images/hcj.png"></p>
+
+<center>
+<img width="90%" src="./../../images/javascript.png">
+</center>
+<br>
+
+# 📚 <a style="color:#00adb5">Web Storage</a>
 
 ## <a style="color:#00adb5">Web Storage</a>
 - localStorage, SessionStorage 기본 구성

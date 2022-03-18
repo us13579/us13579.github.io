@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "DATABASE Subquery"
+title:  "DATABASE_Subquery"
 categories: 
     - DATABASE
 tags: 
@@ -10,9 +10,15 @@ sidebar:
 ---
 
 # 📚 <a style="color:#00adb5">DB ( DataBase )</a>
-<img width="100%" src="./../../images/db.png">
 
-## <a style="color:#00adb5">DATABASE Subquery</a>
+<center>
+<img width="90%" src="./../../images/database.png">
+</center>
+<br>
+
+# 📚 <a style="color:#00adb5">Subquery</a>
+
+## <a style="color:#00adb5">Subquery</a> 란 무엇인가?
 - 서브 쿼리 ( subquery) 란 <a style="color:red"><strong>다른 쿼리 내부에 포함 되어 있는 SELECT 문을 의미</strong></a>한다.
 - 여러 번의 select 문을 실행하여 얻을 수 있는 결과를 하나의 쿼리로 결과를 얻을 수 있다.
 - 서브 쿼리를 포함하고 있는 쿼리를 외부 쿼리 ( outer query ) 또는 메인 쿼리라고 부르며, 서브 쿼리는 내부 쿼리 ( inner query )라고도 부른다.

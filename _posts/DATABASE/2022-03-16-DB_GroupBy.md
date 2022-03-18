@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "DATABASE Group by 절"
+title:  "DATABASE_Group by 절"
 categories: 
     - DATABASE
 tags: 
@@ -10,9 +10,15 @@ sidebar:
 ---
 
 # 📚 <a style="color:#00adb5">DB ( DataBase )</a>
-<img width="100%" src="./../../images/db.png">
 
-## <a style="color:#00adb5">Group by 절</a>
+<center>
+<img width="90%" src="./../../images/database.png">
+</center>
+<br>
+
+# 📚 <a style="color:#00adb5">Group by 절</a>
+
+## <a style="color:#00adb5">Group by 절</a> 이란 무엇인가?
 - select 문에서 group by 절을 사용하는 경우 database 는 <a style="color:red"><strong>쿼리 된 테이블의 행을 그룹으로 묶는다.</strong></a>
 - database 는 선택 목록의 집계 함수를 각 행 그룹에 적용하고 각 그룹에 대해 단일 결과 행을 반환한다.
 - group by 절을 생략하면 database 는 선택 목록의 집계 함수를 쿼리 된 테이블의 모든 행에 적용한다.

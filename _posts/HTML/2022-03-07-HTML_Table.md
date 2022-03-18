@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "HTML Table"
+title:  "HTML_Table"
 categories: 
     - HTML
 tags: 
@@ -10,11 +10,15 @@ sidebar:
 ---
 
 # 📚 <a style="color:#00adb5">HTML</a>
-<b>웹 문서를 구성하는 3가지 요소</b>
-<a style="color:red"><b>웹 페이지 문서 담당 ( 구 조 )</b></a><br>
-<p align="center"><img src="./../../images/hcj.png"></p>
 
-## <a style="color:#00adb5">HTML Table</a> 모델
+<center>
+<img width="90%" src="./../../images/html.png">
+</center>
+<br>
+
+# 📚 <a style="color:#00adb5">Table</a>
+
+## <a style="color:#00adb5">HTML Table 모델</a> 이란 무엇인가?
 HTML Table 모델은 <a style="color:red"><strong>데이터를 행 ( Row ) 과 열 ( Column ) 의 셀에 표시한 것</strong></a><br>
 &lt;thead&gt; &lt;tbody&gt; &lt;tfoot&gt; 요소들을 사용해 행들을 그룹화 한다.<br>
 &lt;colgroup&gt; 과 &lt;col&gt; 요소는 열 그룹을 위한 추가적인 구조정보를 제공한다.<br>

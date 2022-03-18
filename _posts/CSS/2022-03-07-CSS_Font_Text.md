@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "CSS Font & Text"
+title:  "CSS_Font & Text"
 categories: 
     - CSS
 tags: 
@@ -10,9 +10,13 @@ sidebar:
 ---
 
 # 📚 <a style="color:#00adb5">CSS</a>
-<b>웹 문서를 구성하는 3가지 요소</b>
-<a style="color:red"><b>웹 페이지 디자인 담당 ( 표 현 )</b></a><br>
-<p align="center"><img src="./../../images/hcj.png"></p>
+
+<center>
+<img width="90%" src="./../../images/css.png">
+</center>
+<br>
+
+# 📚 <a style="color:#00adb5">Font & Text</a>
 
 ## <a style="color:#00adb5">CSS</a> Font
 CSS Font 관련 속성은 text의 글꼴, 굵기, 크기, 스타일등을 지정한다.<br>

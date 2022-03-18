@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "Exhaustive Search ( 완전 탐색 )"
+title:  "ALGORITHM_Exhaustive Search ( 완전 탐색 )"
 categories: 
     - ALGORITHM
 tags: 
@@ -9,9 +9,16 @@ sidebar:
     nav: "docs"
 ---
 
-# 📚 <a style="color:#00adb5">Exhaustive Search</a>
+# 📚 <a style="color:#00adb5">ALGORITHM</a>
 
-## <a style="color:#00adb5">완전 탐색</a>이란 무엇인가 ?
+<center>
+<img width="90%" src="./../../images/algorithm.png">
+</center>
+<br>
+
+# 📚 <a style="color:#00adb5">Exhaustive Search ( 완전 탐색 )</a>
+
+## <a style="color:#00adb5">Exhaustive Search ( 완전 탐색 )</a>이란 무엇인가 ?
 완전 탐색 방법은 <b><a style="color:red">문제의 해법으로 생각할 수 있는 모든 경우의 수를 나열해보고 확인하는 기법</a></b>이다.<br>
 'Brute-force' 또는 'generate-and-test' 기법이라고 불린다.<br>
 모든 경우의 수를 테스트한 뒤 최종 해법을 도출한다.<br>
