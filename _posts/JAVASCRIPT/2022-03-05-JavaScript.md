@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "JAVASCRIPT Basic"
+title:  "JAVASCRIPT_Basic"
 categories: 
     - JAVASCRIPT
 tags: 
@@ -10,9 +10,13 @@ sidebar:
 ---
 
 # 📚 <a style="color:#00adb5">JAVASCRIPT</a>
-<b>웹 문서를 구성하는 3가지 요소</b>
-<a style="color:red"><b>웹 페이지 이벤트 담당 ( 동 작 )</b></a><br>
-<p align="center"><img src="./../../images/hcj.png"></p>
+
+<center>
+<img width="90%" src="./../../images/javascript.png">
+</center>
+<br>
+
+# 📚 <a style="color:#00adb5">Basic</a>
 
 ## <a style="color:#00adb5">JAVASCRIPT</a>이란 무엇인가 ?
 <a style="color:red"><strong>JavaScript는 프로토타입 기반의 스크립트 프로그래밍 언어로 객체지향 개념 ( 명령형, 함수형, 프로토타입 기반 ) 을 지원</strong></a>한다.<br><br>

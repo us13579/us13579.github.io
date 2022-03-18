@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "JAVASCRIPT Window 객체"
+title:  "JAVASCRIPT_Window 객체"
 categories: 
     - JAVASCRIPT
 tags: 
@@ -10,17 +10,21 @@ sidebar:
 ---
 
 # 📚 <a style="color:#00adb5">JAVASCRIPT</a>
-<b>웹 문서를 구성하는 3가지 요소</b>
-<a style="color:red"><b>웹 페이지 이벤트 담당 ( 동 작 )</b></a><br>
-<p align="center"><img src="./../../images/hcj.png"></p>
 
-## <a style="color:#00adb5">JAVASCRIPT Window 객체</a>란?
+<center>
+<img width="90%" src="./../../images/javascript.png">
+</center>
+<br>
+
+# 📚 <a style="color:#00adb5">Window 객체</a>
+
+## <a style="color:#00adb5">Window 객체</a>란?
 - Window 객체는 웹 브라우저에서 작동하는 JavaScript의 최상위 전역 객체이다.
 - Window 객체에는 브라우저와 관련된 여러 객체와 속성, 함수가 있다.
 - JS에서 기본적으로 제공하는 프로퍼티와 함수도 포함한다. ( Number 객체, setInterval() 함수 등 )
 - BOM( Browser Object Model ) 으로 불리기도 한다.
 
-## <a style="color:#00adb5">JAVASCRIPT Window 객체</a> 사용
+## <a style="color:#00adb5">Window 객체</a> 사용
 
 ### <a style="color:#00adb5">alert, confirm, prompt</a>
 <a style="color:red"><strong>Window 객체의 함수를 호출하면 브라우저에서 제공하는 창을 open 해준다.</strong></a>

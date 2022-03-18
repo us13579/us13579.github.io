@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "DATABASE MYSQL-FUNCTION"
+title:  "DATABASE_MYSQL-FUNCTION"
 categories: 
     - DATABASE
 tags: 
@@ -10,9 +10,15 @@ sidebar:
 ---
 
 # 📚 <a style="color:#00adb5">DB ( DataBase )</a>
-<img width="100%" src="./../../images/db.png">
 
-## <a style="color:#00adb5">MYSQL Function</a> 내장 함수
+<center>
+<img width="90%" src="./../../images/database.png">
+</center>
+<br>
+
+# 📚 <a style="color:#00adb5">MYSQL-FUNCTION</a>
+
+## <a style="color:#00adb5">MYSQL-Function</a> 내장 함수
 MYSQL에서 사용하는 여러 내장 함수들이 있다.<br>
 가져오려는 데이터를 <a style="color:red"><strong>JAVA에서 조건을 주는 것보다 MYSQL FUNCTION을 사용해서 주는게 더 유용</strong></a>하다.<br>
 

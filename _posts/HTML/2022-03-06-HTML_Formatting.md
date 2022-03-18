@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "HTML 포맷팅 요소"
+title:  "HTML_포맷팅 요소"
 categories: 
     - HTML
 tags: 
@@ -10,11 +10,15 @@ sidebar:
 ---
 
 # 📚 <a style="color:#00adb5">HTML</a>
-<b>웹 문서를 구성하는 3가지 요소</b>
-<a style="color:red"><b>웹 페이지 문서 담당 ( 구 조 )</b></a><br>
-<p align="center"><img src="./../../images/hcj.png"></p>
 
-## <a style="color:#00adb5">HTML 포맷팅 요소</a>
+<center>
+<img width="90%" src="./../../images/html.png">
+</center>
+<br>
+
+# 📚 <a style="color:#00adb5">포맷팅 요소</a>
+
+## <a style="color:#00adb5">HTML 포맷팅 요소</a> 란 무엇인가?
 포맷팅 요소에는 <a style="color:red"><strong>화면에는 동일하게 출력되지만 각 요소가 가진 의미가 다른 것이 있다.</strong></a><br>
 예를 들면 b 와 strong tag 둘다 굵은 글씨로 표시하는 것인데 b 는 그냥 굵은 글씨라면 strong 은 특정 문자열을 강조하는 굵은 글씨이다.<br>
 사용자가 보기에는 같지만 개발자가 볼 때에는 의미를 해석할 수 있다.<br>

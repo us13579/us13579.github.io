@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "CSS Selector"
+title:  "CSS_Selector"
 categories: 
     - CSS
 tags: 
@@ -10,9 +10,14 @@ sidebar:
 ---
 
 # 📚 <a style="color:#00adb5">CSS</a>
-<b>웹 문서를 구성하는 3가지 요소</b>
-<a style="color:red"><b>웹 페이지 디자인 담당 ( 표 현 )</b></a><br>
-<p align="center"><img src="./../../images/hcj.png"></p>
+
+<center>
+<img width="90%" src="./../../images/css.png">
+</center>
+<br>
+
+# 📚 <a style="color:#00adb5">Selector</a>
+
 
 ## <a style="color:#00adb5">CSS</a> 선택자 ( Selector )란 무엇인가 ? 
 선택자는 <a style="color:red"><strong>규칙이 적용되는 엘리먼트</strong></a>이다.<br>

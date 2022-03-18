@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "HTML Semantic"
+title:  "HTML_Semantic"
 categories: 
     - HTML
 tags: 
@@ -10,9 +10,13 @@ sidebar:
 ---
 
 # 📚 <a style="color:#00adb5">HTML</a>
-<b>웹 문서를 구성하는 3가지 요소</b>
-<a style="color:red"><b>웹 페이지 문서 담당 ( 구 조 )</b></a><br>
-<p align="center"><img src="./../../images/hcj.png"></p>
+
+<center>
+<img width="90%" src="./../../images/html.png">
+</center>
+<br>
+
+# 📚 <a style="color:#00adb5">Semantic</a>
 
 ## <a style="color:#00adb5">HTML Semantic</a> 이란?
 - Semantic 이란 '의미론적인', '의미가 통하는' 이다.

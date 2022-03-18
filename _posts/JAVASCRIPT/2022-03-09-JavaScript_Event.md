@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "JAVASCRIPT Event"
+title:  "JAVASCRIPT_Event"
 categories: 
     - JAVASCRIPT
 tags: 
@@ -10,9 +10,13 @@ sidebar:
 ---
 
 # 📚 <a style="color:#00adb5">JAVASCRIPT</a>
-<b>웹 문서를 구성하는 3가지 요소</b>
-<a style="color:red"><b>웹 페이지 이벤트 담당 ( 동 작 )</b></a><br>
-<p align="center"><img src="./../../images/hcj.png"></p>
+
+<center>
+<img width="90%" src="./../../images/javascript.png">
+</center>
+<br>
+
+# 📚 <a style="color:#00adb5">Event</a>
 
 ## <a style="color:#00adb5">Event</a> 란?
 - 웹 페이지에서 여러 종류의 상호작용이 있을 때 마다 이벤트가 발생한다.

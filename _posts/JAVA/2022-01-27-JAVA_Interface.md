@@ -1,19 +1,24 @@
 ---
 layout: single
-title:  "Interface ( 인터페이스 )"
+title:  "JAVA_Interface ( 인터페이스 )"
 categories: 
     - JAVA
 tags: 
     - [2022-01, JAVA, STUDY]
 sidebar:
     nav: "docs"
-
 ---
 
+# 📚 <a style="color:#00adb5">JAVA</a>
 
-# 📚 <a style="color:#00adb5"><b>Interface</b></a>
+<center>
+<img width="90%" src="./../../images/java.png">
+</center>
+<br>
 
-## <a style="color:#00adb5">인터페이스</a>란 무엇인가 ?
+# 📚 <a style="color:#00adb5">Interface ( 인터페이스 )</a>
+
+## <a style="color:#00adb5">Interface ( 인터페이스 )</a> 란 무엇인가 ?
 ### <a style="color:#00adb5"><b>인터페이스 개념</b></a>
 인터페이스란 사전적 정의로는 서로 다른 두 시스템, 장치, 소프트웨어 따위를 서로 이어주는 부분 또는 그런 장치이다.<br>
 자바에서는 <a style="color:red"><b>극단적으로 동일한 목적 하에 동일한 기능을 수행하게끔 강제하는 것이 인터페이스의 역할이자 개념이다. </b></a><br>

@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "DATABASE Modelling"
+title:  "DATABASE_Modelling"
 categories: 
     - DATABASE
 tags: 
@@ -10,9 +10,15 @@ sidebar:
 ---
 
 # 📚 <a style="color:#00adb5">DB ( DataBase )</a>
-<img width="100%" src="./../../images/db.png">
 
-## <a style="color:#00adb5">DATABASE Modelling ( 데이터베이스 모델링 ) </a>
+<center>
+<img width="90%" src="./../../images/database.png">
+</center>
+<br>
+
+# 📚 <a style="color:#00adb5">DATABASE Modelling</a>
+
+## <a style="color:#00adb5">DATABASE Modelling ( 데이터베이스 모델링 ) </a> 이란 무엇인가?
 
 데이터베이스 모델링은 <a style="color:red"><strong>정보화 시스템을 구축하기 위해 어떤 데이터가 존재 하는지 또는 업무에 필요한 정보는 무엇인지 분석하는 방법</strong></a>이다.<br>
 관계형 데이터베이스는 <a style="color:red"><strong>표의 개념 ( 행 Row, 열 Column )</strong></a>을 사용해서 데이터를 구성하는 방법을 사용한다.<br>

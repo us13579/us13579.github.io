@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "JAVASCRIPT DOM"
+title:  "JAVASCRIPT_DOM"
 categories: 
     - JAVASCRIPT
 tags: 
@@ -10,9 +10,13 @@ sidebar:
 ---
 
 # 📚 <a style="color:#00adb5">JAVASCRIPT</a>
-<b>웹 문서를 구성하는 3가지 요소</b>
-<a style="color:red"><b>웹 페이지 이벤트 담당 ( 동 작 )</b></a><br>
-<p align="center"><img src="./../../images/hcj.png"></p>
+
+<center>
+<img width="90%" src="./../../images/javascript.png">
+</center>
+<br>
+
+# 📚 <a style="color:#00adb5">DOM</a>
 
 ## <a style="color:#00adb5">DOM</a> 이란?
 - DOM ( Document Object Model ) 은 <a style="color:red"><strong>HTML과 XML 문서의 구조를 정의하는 API 제공</strong></a>한다.

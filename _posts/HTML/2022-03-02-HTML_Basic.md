@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "HTML Basic"
+title:  "HTML_Basic"
 categories: 
     - HTML
 tags: 
@@ -10,9 +10,13 @@ sidebar:
 ---
 
 # 📚 <a style="color:#00adb5">HTML</a>
-<b>웹 문서를 구성하는 3가지 요소</b>
-<a style="color:red"><b>웹 페이지 문서 담당 ( 구 조 )</b></a><br>
-<p align="center"><img src="./../../images/hcj.png"></p>
+
+<center>
+<img width="90%" src="./../../images/html.png">
+</center>
+<br>
+
+# 📚 <a style="color:#00adb5">Basic</a>
 
 ## <a style="color:#00adb5">HTML</a>이란 무엇인가 ?
 HTML이란 <a style="color:red"><b>Hypertext Markup Language의 약자이며 프로그래밍 언어는 아니고 웹페이지가 어떻게 구조화되어 있는지 브라우저로 하여금 알 수 있도록 하는 마크업 언어</b></a>이다.<br>

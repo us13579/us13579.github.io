@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "BFS & DFS"
+title:  "ALGORITHM_BFS & DFS"
 categories: 
     - ALGORITHM
 tags: 
@@ -8,6 +8,13 @@ tags:
 sidebar:
     nav: "docs"
 ---
+
+# 📚 <a style="color:#00adb5">ALGORITHM</a>
+
+<center>
+<img width="90%" src="./../../images/algorithm.png">
+</center>
+<br>
 
 # 📚 <a style="color:#00adb5">BFS & DFS</a>
 
