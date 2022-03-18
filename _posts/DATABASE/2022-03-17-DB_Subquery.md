@@ -12,7 +12,7 @@ sidebar:
 # 📚 <a style="color:#00adb5">DB ( DataBase )</a>
 <img width="100%" src="./../../images/db.png">
 
-## <a style="color:#00adb5">Subquery</a>
+## <a style="color:#00adb5">DATABASE Subquery</a>
 - 서브 쿼리 ( subquery) 란 <a style="color:red"><strong>다른 쿼리 내부에 포함 되어 있는 SELECT 문을 의미</strong></a>한다.
 - 여러 번의 select 문을 실행하여 얻을 수 있는 결과를 하나의 쿼리로 결과를 얻을 수 있다.
 - 서브 쿼리를 포함하고 있는 쿼리를 외부 쿼리 ( outer query ) 또는 메인 쿼리라고 부르며, 서브 쿼리는 내부 쿼리 ( inner query )라고도 부른다.
@@ -219,7 +219,7 @@ where sal < (select avg(salary) from employees);
 ```
 
 
-## <a style="color:#00adb5">DATABASE</a> Subquery 마무리
+## <a style="color:#00adb5">DATABASE Subquery</a> 마무리
 DB의 꽃인 Subquery를 배워보았다.<br>
 확실히 Join과 Subquery를 배우니 접근할 수 있는 데이터들이 훨씬 많이 늘어났다.<br>
 물론 복잡하게 구하면 어렵지만 어느정도 구조는 다 이해한 것 같다.<br>
