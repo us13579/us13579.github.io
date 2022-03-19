@@ -12,7 +12,7 @@ sidebar:
 # 📚 <a style="color:#00adb5">JAVASCRIPT</a>
 
 <center>
-<img width="90%" src="./../../images/javascript.png">
+<img width="90%" src="./../../images/JAVASCRIPT.png">
 </center>
 <br>
 
