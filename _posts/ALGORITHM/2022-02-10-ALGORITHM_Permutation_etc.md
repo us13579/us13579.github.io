@@ -30,6 +30,7 @@ sidebar:
 - 크기 (R) 이 고정되어 있으면 반복문 사용 가능 !!
 - 크기 (R) 이 고정되어 있지 않으면 재귀 사용 !!
 - boolean을 활용하여 체크
+- 다른 배열에 값을 저장하면서 기저조건이 되면 그 값들을 다 확인한다.
 
 ### 식
 
@@ -130,7 +131,8 @@ public class PermutationPractice {
 <b><a style="color:red">서로 다른 N개의 원소 중 R개를 순서 없이 골라낸 것</a></b><br>
 <b><a style="color:red">조합은 순서가 상관이 없다 !!!</a></b><br>
 
-- 규칙이 있다 ! 자기보다 큰 값만 확인하면 된다 !!
+- 규칙이 있다 ! 자기보다 큰 값만 확인하면 된다 !! ( boolean 배열 필요 X )
+- 다른 배열에 값을 저장하면서 기저조건이 되면 그 값들을 다 확인한다.
 
 ### 식
 
@@ -273,7 +275,6 @@ public class SubtestPrac {
 		//현재 원소를 선택
 		isSelected[cnt] = true;
 		generateSubset(cnt+1);
-		
 		
 		//현재 원소를 비선택
 		isSelected[cnt] = false;
