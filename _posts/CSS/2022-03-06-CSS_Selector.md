@@ -47,6 +47,7 @@ HTML 문서 내 모든 Element를 선택한다.
 <hr>
 
 ```HTML
+<head>
 <style type="text/css">
 * {
     background: skyblue;
@@ -75,6 +76,7 @@ HTML 문서 내 모든 Element를 선택한다.
 <hr>
 
 ```HTML
+<head>
 <style type="text/css">
 div, p {
     padding: 10px; margin: 10px; font-weight: bold;
@@ -111,6 +113,7 @@ class 속성 값에 하나 이상의 클래스를 적용 가능하다.
 <hr>
 
 ```HTML
+<head>
  <style type="text/css">
         .target1 { 
             background: skyblue;
@@ -147,6 +150,7 @@ ID 속성 값엔 1개의 ID만 사용 가능<br>
 <hr>
 
 ```HTML
+<head>
  <style type="text/css">
         #target1 { 
             background: skyblue;
@@ -184,6 +188,7 @@ ID 속성 값엔 1개의 ID만 사용 가능<br>
 <hr>
 
 ```HTML
+<head>
     <style type="text/css">
         div div{
             background-color: black;
@@ -233,6 +238,7 @@ ID 속성 값엔 1개의 ID만 사용 가능<br>
 <hr>
 
 ```HTML
+<head>
 <style type="text/css">
        div + p{
            background-color: grey;
