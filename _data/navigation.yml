@@ -15,17 +15,8 @@ docs:
       - title: "BLOG"
         url: /category/BLOG/
         category: "BLOG"
-  - title: "STUDY"    
-    children: 
-    - title: "STUDY"
-      url: /category/STUDY/
-      category: "STUDY"
-    - title: "ALGORITHM"
-      url: /category/ALGORITHM/
-      category: "ALGORITHM"
-    - title: "JAVA"
-      url: /category/JAVA/
-      category: "JAVA"
+  - title: "FrontEnd"
+    children:
     - title: "HTML"
       url: /category/HTML/
       category: "HTML"
@@ -35,9 +26,20 @@ docs:
     - title: "JAVA SCRIPT"
       url: /category/JAVASCRIPT/
       category: "JAVASCRIPT"
+  - title: "BackEnd"
+    children:
+    - title: "WEB"
+      url: /category/WEB/
+      category: "WEB"
+    - title: "JAVA"
+      url: /category/JAVA/
+      category: "JAVA"
     - title: "DATABASE"
       url: /category/DATABASE/
       category: "DATABASE"
+    - title: "ALGORITHM"
+      url: /category/ALGORITHM/
+      category: "ALGORITHM"
   - title: "Coding Test"
     children:
       - title: "BOJ"
