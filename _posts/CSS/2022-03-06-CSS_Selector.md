@@ -46,7 +46,7 @@ HTML 문서 내 모든 Element를 선택한다.
 
 <hr>
 
-```HTML
+```html
 <head>
 <style type="text/css">
 * {
@@ -75,7 +75,7 @@ HTML 문서 내 모든 Element를 선택한다.
 
 <hr>
 
-```HTML
+```html
 <head>
 <style type="text/css">
 div, p {
@@ -112,7 +112,7 @@ class 속성 값에 하나 이상의 클래스를 적용 가능하다.
 
 <hr>
 
-```HTML
+```html
 <head>
  <style type="text/css">
         .target1 { 
@@ -149,7 +149,7 @@ ID 속성 값엔 1개의 ID만 사용 가능<br>
 
 <hr>
 
-```HTML
+```html
 <head>
  <style type="text/css">
         #target1 { 
@@ -187,7 +187,7 @@ ID 속성 값엔 1개의 ID만 사용 가능<br>
 
 <hr>
 
-```HTML
+```html
 <head>
     <style type="text/css">
         div div{
@@ -237,7 +237,7 @@ ID 속성 값엔 1개의 ID만 사용 가능<br>
 
 <hr>
 
-```HTML
+```html
 <head>
 <style type="text/css">
        div + p{
