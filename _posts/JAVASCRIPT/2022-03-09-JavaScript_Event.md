@@ -152,7 +152,7 @@ input, textarea에 입력 값 중 일부가 마우스 등으로 선택될 때 �
 - <a style="color:red"><strong>HTML 요소의 내부에서 직접 이벤트 핸들러를 등록한다.</strong></a>
 - 이 방법은 HTML 코드를 JS코드가 침범한다는 문제가 있다.
 - 여러 개의 함수를 한 번에 호출가능
-- 한동안 사용하지 않았다가<a style="color:red"><strong?> 최근 관심 받고 있는 CBD( Component Based Development ) 방식의  Angular / React / Vue.js 와 같은 framework / library 에서는 인라인 방식으로 이벤트를 처리한다. ( CBD 에서는 html, css, js 를 view 의 구성 요소로만 생각하기 때문에 )</strong></a>
+- 한동안 사용하지 않았다가<a style="color:red"><strong> 최근 관심 받고 있는 CBD( Component Based Development ) 방식의  Angular / React / Vue.js 와 같은 framework / library 에서는 인라인 방식으로 이벤트를 처리한다. ( CBD 에서는 html, css, js 를 view 의 구성 요소로만 생각하기 때문에 )</strong></a>
 
 <br>
 
