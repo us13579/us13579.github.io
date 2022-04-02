@@ -170,8 +170,3 @@ static int fibo1(int n){
     - 즉 fibo[0] ~ fibo[n] 까지 단 한번씩만 계산
 
 
-
-
-
-
-- 팁 : dp 0 1 2 3 까지 구해서 점화식 찾아서 구해서 ㄱ
