@@ -70,10 +70,10 @@ CGI는 특별한 라이브러리나 도구가 아니고 별도로 제작된 웹�
 클라이언트가 세션에 정보를 저장하고 세션 기능 유지를 위해서 제공되는 클래스
 
 <h6>HttpServlet에서 제공되는 주요 메서드<br>
-<table width="100%" height="500px" style="text-align:center; font-size:23px">
+<table width="1000px" height="500px" style="text-align:center; font-size:23px">
 <tr style= "font-weight:bold">
     <td style='border:3px solid #00adb5' width="40%">메서드</td>
-    <td style='border:3px solid #00adb5'>설명</td>
+    <td style='border:3px solid #00adb5' width="60%">설명</td>
 </tr>
 <tr>
     <td style='border:3px solid #00adb5' height= "60px">void int()</td>
@@ -102,7 +102,7 @@ CGI는 특별한 라이브러리나 도구가 아니고 별도로 제작된 웹�
 <table width="100%" height="430px" style="text-align:center; font-size:23px">
 <tr style= "font-weight:bold">
     <td style='border:3px solid #00adb5' width="40%">메서드</td>
-    <td style='border:3px solid #00adb5'>설명</td>
+    <td style='border:3px solid #00adb5' width="60%">설명</td>
 </tr>
 <tr>
     <td style='border:3px solid #00adb5' height= "60px">String getParameter(name)</td>
@@ -128,7 +128,7 @@ CGI는 특별한 라이브러리나 도구가 아니고 별도로 제작된 웹�
 <table width="100%" height="400px" style="text-align:center; font-size:23px">
 <tr style= "font-weight:bold">
     <td style='border:3px solid #00adb5' width="40%">메서드</td>
-    <td style='border:3px solid #00adb5'>설명</td>
+    <td style='border:3px solid #00adb5' width="60%">설명</td>
 </tr>
 <tr>
     <td style='border:3px solid #00adb5' height= "60px">void setHeader(name, value)</td>
@@ -148,11 +148,12 @@ CGI는 특별한 라이브러리나 도구가 아니고 별도로 제작된 웹�
 </tr>
 </table>
 
+
 <h6>HttpSession에서 제공되는 주요 메서드<br>
 <table width="100%" height="600px" style="text-align:center; font-size:23px">
 <tr style= "font-weight:bold">
     <td style='border:3px solid #00adb5' width="40%">메서드</td>
-    <td style='border:3px solid #00adb5'>설명</td>
+    <td style='border:3px solid #00adb5' width="60%">설명</td>
 </tr>
 <tr>
     <td style='border:3px solid #00adb5' height= "60px">String getId()</td>
@@ -173,12 +174,14 @@ CGI는 특별한 라이브러리나 도구가 아니고 별도로 제작된 웹�
 </tr>
 <tr>
     <td style='border:3px solid #00adb5' height= "60px">boolean isNew()</td>
-    <td style='border:3px solid #00adb5'>클라이언트 세션ID를 할당하지 않은 경우 true 값을 반환<br>
+    <td style='border:3px solid #00adb5'>클라이언트 세션ID를 할당하지 않은 경우 true 값을 반환</td>
 </tr>
 <tr>
     <td style='border:3px solid #00adb5' height= "60px">void invalidate()</td>
     <td style='border:3px solid #00adb5'>해당 세션을 모두 종료</td>
+</tr>
 </table>
+
 
 
 
