@@ -44,81 +44,81 @@ n! = n * ( n-1 ) * ( n-2 ) * .. 2 * 1<br><br>
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
-// nPr 구현하기
-
-public class PermutationPractice {
+public class Main {
 	static StringTokenizer st;
-	static int N, R;
-	static int[] input, numbers;
-	static boolean[] isChecked;
-
-	public static void main(String[] args) throws NumberFormatException, IOException {
+	static int N, M;
+	static boolean[] v;
+	static StringBuilder sb;
+	static int[] arr;
+	public static void main(String[] args) throws IOException {
+		sb = new StringBuilder();
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringBuilder sb = new StringBuilder();
-
-		N = Integer.parseInt(br.readLine());
-		R = Integer.parseInt(br.readLine());
-
-		// N 배열 ( 입력 수 )
-		input = new int[N];
-		// R 배열 ( 선택한 것 )
-		numbers = new int[R];
-		// 선택 여부
-		isChecked = new boolean[N];
-
-		// 배열 입력
-		st = new StringTokenizer(br.readLine(), " ");
-		for (int i = 0; i < N; i++) {
-			input[i] = Integer.parseInt(st.nextToken());
-		}
-
-		permutation(0);
-
-	}
-
-	// 조합 구현
-	static void permutation(int cnt) { // cnt = 직전 까지 뽑은 수의 개수
 		
-		// 기저 조건 ( R개 뽑혔으면 종료 )
-		if (cnt == R) {
-			System.out.println(Arrays.toString(numbers));
+		st = new StringTokenizer(br.readLine(), " ");
+		
+		N = Integer.parseInt(st.nextToken());
+		
+		M = Integer.parseInt(st.nextToken());
+		
+		// 숫자 배열
+		arr = new int[M];
+
+		// 방문 확인 배열 
+		v= new boolean[N+1];
+		
+		perm(0);
+		
+		System.out.println(sb);
+		
+	}
+	
+	// 순열 nPm
+	static void perm(int ind) {
+
+		// 기저조건
+		if(ind == M) {
+			for(int i=0; i<M;i++) {
+				sb.append(arr[i]).append(" ");
+			}
+			sb.append("\n");
 			return;
 		}
 		
-		// 입력 받은 모든 수를 현재 자리에 넣어보기
-		for (int i = 0; i < N; i++) {
-			
-			// 기존 수와 중복하는지 ? 중복하면 통과
-			if (isChecked[i]) {
-				continue;
-			} 
-			else {
-				// 배열 입력 & 선택되었다고 표시 ( true )
-				numbers[cnt] = input[i];
-				isChecked[i] = true;
+		for(int i=1;i<N+1;i++) {
 
-				// 다음수 뽑으러 가기
-				permutation(cnt + 1); // 뒤에 다 왔다 갔다.
-				isChecked[i] = false; // 백트래킹에서 원상 복구
-			}
+		// 이미 방문했으면 통과
+		if(v[i]) {
+			continue;
+		}
+		else {
+			v[i] = true;
+			arr[ind] = i;
+			perm(ind+1);
+
+			// 백트래킹
+			v[i] = false;
+		}
 		}
 	}
 }
 ```
 <a style="color:#00adb5"><b>출력 결과</b></a><br>
+입력 : 4 2 
 ```
-3
-2
-1 2 3
-[1, 2]
-[1, 3]
-[2, 1]
-[2, 3]
-[3, 1]
-[3, 2]
+1 2
+1 3
+1 4
+2 1
+2 3
+2 4
+3 1
+3 2
+3 4
+4 1
+4 2
+4 3
 ```
 <hr>
  주석으로 설명을 해놓았지만 재귀로 계속해서 R개 만큼 뽑고 나서 R개가 채워지면 이제 다시 돌아오면서 isChecked를 통해 선택 여부를 초기화 시켜준다.<br>
@@ -146,61 +146,60 @@ nC0 = 1<br><br>
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
-// 조합 -> 순서가 상관이 없다
-public class CombinationPractice {
+public class Main {
 	static StringTokenizer st;
-	static int N, R;
-	static int[] input, numbers; // input : 입력수 배열, numbers : 선택수 배열
-
-	public static void main(String[] args) throws NumberFormatException, IOException {
+	static StringBuilder sb;
+	static int[] arr;
+	static int N,M;
+	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringBuilder sb = new StringBuilder();
-
-		N = Integer.parseInt(br.readLine());
-		R = Integer.parseInt(br.readLine());
-				
-		input = new int[N];
-		numbers = new int[R];
-
-		st = new StringTokenizer(br.readLine(), " ");
-		for (int i = 0; i < N; i++) {
-			input[i] = Integer.parseInt(st.nextToken());
-		}
-
-		combination(0, 0);
-
-	}
-
-	// 순열과 다르게 매개변수 start 추가 
-	// 그 이유는 앞에 것을 더 이상 비교할 필요가 없기 때문에, start가 다음 값을 가리킨다.
-	static void combination(int cnt, int start) {
+		sb = new StringBuilder();
 		
-		// 기저 조건
-		if(cnt == R) {
-			System.out.println(Arrays.toString(numbers));
+		st = new StringTokenizer(br.readLine(), " ");
+		
+		N = Integer.parseInt(st.nextToken());
+		
+		M = Integer.parseInt(st.nextToken());
+		
+		// 숫자 배열
+		arr = new int[M];
+		
+		comb(0,1);
+		
+		System.out.println(sb);
+		}
+	
+    // 조합 nCm
+	static void comb(int idx, int start) {
+
+		// 기저조건
+		if(idx == M) {
+			for(int i=0;i<M;i++) {
+				sb.append(arr[i]).append(" ");
+			}
+			sb.append("\n");
 			return;
 		}
 		
-		// 시작이 start
-		for(int i=start; i<N; i++) {
-			numbers[cnt] = input[i];
-			combination(cnt+1, i+1); 	// 다음 자리는 현재 뽑은 i의 다음수
-		}
-	}
+		for(int i=start; i<N+1;i++) {
+				arr[idx] = i;
+				comb(idx+1, i+1);
+		}		
+	}	
 }
 ```
 
 <a style="color:#00adb5"><b>출력 결과</b></a><br>
+입력 : 4 2 
 ```
-3
-2
-1 2 3
-[1, 2]
-[1, 3]
-[2, 3]
+1 2
+1 3
+1 4
+2 3
+2 4
+3 4
 ```
 
 <hr>
@@ -226,75 +225,83 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class SubtestPrac {
+public class Main {
 	static StringTokenizer st;
-	static int N, input[];
-	static boolean[] isSelected;
+	static int N,M;
+	static StringBuilder sb;
+	static boolean[] v;
+	static int[] arr;
 	
-	
-	public static void main(String[] args) throws NumberFormatException, IOException {
+	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringBuilder sb = new StringBuilder();
+		sb = new StringBuilder();
 		
-		N = Integer.parseInt(br.readLine());
-		
-		// 입력 배열
-		input = new int[N];
-		isSelected = new boolean[N];
-		
-		// 배열에 입력
 		st = new StringTokenizer(br.readLine(), " ");
-		for(int i=0; i<N; i++) {
-			input[i] = Integer.parseInt(st.nextToken());
-		}
 		
-		generateSubset(0);
-				
+		N = Integer.parseInt(st.nextToken());
+		
+		M = Integer.parseInt(st.nextToken());
+		
+		arr = new int[M];
+		v = new boolean[N];
+		
+		go(0);
+		System.out.println(sb);
+
 	}
-    
-	// 부분집합에 고려해야 하는 원소, 직전까지 고려한 원소수
-	static void generateSubset(int cnt) {
-		
-		// 기저 조건 ( 마지막 원소까지 부분집합에 다 고려된 상황 )
-		if(cnt == N) {
-			for(int i=0; i<N; i++) {
-				// 만약 들어 있으면 
-				if(isSelected[i]) {
-					System.out.print(input[i] + " ");
-				}
-				// 안들어있으면
-				else {
-					System.out.print("X" + " ");
-				}
+	
+	static void go(int idx) {
+		if(idx == M) {
+			for(int i=0; i<M; i++) {
+				sb.append(arr[i]+1).append(" ");
 			}
-			System.out.println();
+			sb.append("\n");
 			return;
 		}
-		
+
+// 두가지 방법
+// 1. 
 		//파워셋 처리
 		//현재 원소를 선택
-		isSelected[cnt] = true;
-		generateSubset(cnt+1);
-		
+		v[idx] = true;
+		go(idx+1);
+
 		//현재 원소를 비선택
-		isSelected[cnt] = false;
-		generateSubset(cnt+1);
+		v[idx] = false;
+		go(idx+1);
+
+// 2. 
+		for(int i=0; i<N; i++) {
+				v[i] = true;
+				arr[idx] = i;
+				
+				go(idx+1);
+				v[i] = false;
+			
+		}
 	}
 }
 ```
 
 <a style="color:#00adb5"><b>출력 결과</b></a><br>
+입력 : 4 2 
 ```
-3
-1 2 3
-1 2 3 
-1 2 X 
-1 X 3 
-1 X X 
-X 2 3 
-X 2 X 
-X X 3 
-X X X 
+1 1
+1 2
+1 3
+1 4
+2 1
+2 2
+2 3
+2 4
+3 1
+3 2
+3 3
+3 4
+4 1
+4 2
+4 3
+4 4
 ```
 
 <hr>
