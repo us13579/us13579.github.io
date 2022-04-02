@@ -55,6 +55,134 @@ CGI는 특별한 라이브러리나 도구가 아니고 별도로 제작된 웹�
 </center>
 <br>
 
+## <a style="color:#00adb5">SERVLET</a> 의 주요 클래스와 메서드
+
+- HttpServlet<br>
+서블릿을 만들기 위해 반드시 상속해야 할 필수 클래스
+
+- HttpServletRequest<br>
+클라이언트가 데이터를 입력하거나 클라이언트의 정보에 대한 요청 값을 가지고 있는 클래스
+
+- HttpServletResponse<br>
+클라이언트가 요청한 정보를 처리하고 다시 응답하기 위한 정보를 담고 있는 클래스
+
+- HttpSession<br>
+클라이언트가 세션에 정보를 저장하고 세션 기능 유지를 위해서 제공되는 클래스
+
+<h6>HttpServlet에서 제공되는 주요 메서드<br>
+<table width="100%" height="500px" style="text-align:center; font-size:23px">
+<tr style= "font-weight:bold">
+    <td style='border:3px solid #00adb5' width="40%">메서드</td>
+    <td style='border:3px solid #00adb5'>설명</td>
+</tr>
+<tr>
+    <td style='border:3px solid #00adb5' height= "60px">void int()</td>
+    <td style='border:3px solid #00adb5'>서블릿의 객체가 생성 될 때 호출되는 메서드</td>
+</tr>
+<tr>
+    <td style='border:3px solid #00adb5' height= "60px">void destroy()</td>
+    <td style='border:3px solid #00adb5'>서블릿의 객체가 메모리에서 사라질 때 호출되는 메서드</td>
+</tr>
+<tr>
+    <td style='border:3px solid #00adb5' height= "60px">void service(request, response)</td>
+    <td style='border:3px solid #00adb5'>서블릿의 요청이 있을 때 호출되는 메서드</td>
+</tr>
+<tr>
+    <td style='border:3px solid #00adb5' height= "60px">void doGet(request, response)</td>
+    <td style='border:3px solid #00adb5'>html에서 form의 메서드가 get일 때 호출되는 메서드</td>
+</tr>
+<tr>
+    <td style='border:3px solid #00adb5' height= "60px">void doPost(request, response)</td>
+    <td style='border:3px solid #00adb5'>html에서 form의 메서드가 post일 때 호출되는 메서드</td>
+</tr>
+</table>
+
+
+<h6>HttpServletRequest에서 제공되는 주요 메서드<br>
+<table width="100%" height="430px" style="text-align:center; font-size:23px">
+<tr style= "font-weight:bold">
+    <td style='border:3px solid #00adb5' width="40%">메서드</td>
+    <td style='border:3px solid #00adb5'>설명</td>
+</tr>
+<tr>
+    <td style='border:3px solid #00adb5' height= "60px">String getParameter(name)</td>
+    <td style='border:3px solid #00adb5'>name 값에 할당된 값을 반환하며 값이 없으면 null을 반환</td>
+</tr>
+<tr>
+    <td style='border:3px solid #00adb5' height= "60px">String[] getParameters(name)</td>
+    <td style='border:3px solid #00adb5'>name의 모든 값을 String 배열로 반환</td>
+</tr>
+<tr>
+    <td style='border:3px solid #00adb5' height= "60px">Enumeration getParameterNames()</td>
+    <td style='border:3px solid #00adb5'>요청에 사용된 모든 파라미터 이름을 java.util.Enumeration 타입으로 반환</td>
+</tr>
+<tr>
+    <td style='border:3px solid #00adb5' height= "60px">void setCharacterEncoding(env)<br>
+   ※ 보통 env = utf-g 이다.</td>
+    <td style='border:3px solid #00adb5'>post방식으로 요청된 문자열의 character encoding을 설정</td>
+</tr>
+</table>
+
+
+<h6>HttpServletResponse에서 제공되는 주요 메서드<br>
+<table width="100%" height="400px" style="text-align:center; font-size:23px">
+<tr style= "font-weight:bold">
+    <td style='border:3px solid #00adb5' width="40%">메서드</td>
+    <td style='border:3px solid #00adb5'>설명</td>
+</tr>
+<tr>
+    <td style='border:3px solid #00adb5' height= "60px">void setHeader(name, value)</td>
+    <td style='border:3px solid #00adb5'>응답에 포함될 Header를 설정한다.</td>
+</tr>
+<tr>
+    <td style='border:3px solid #00adb5' height= "60px">void setContentType(type)</td>
+    <td style='border:3px solid #00adb5'>출력되는 페이지의 contentType을 설정</td>
+</tr>
+<tr>
+    <td style='border:3px solid #00adb5' height= "60px">String getCharacterEncoding()</td>
+    <td style='border:3px solid #00adb5'>응답 페이지의 문자 인코딩 Type을 반환</td>
+</tr>
+<tr>
+    <td style='border:3px solid #00adb5' height= "60px">void sendRedirect()</td>
+    <td style='border:3px solid #00adb5'>지정된 URL로 요청을 재전송</td>
+</tr>
+</table>
+
+<h6>HttpSession에서 제공되는 주요 메서드<br>
+<table width="100%" height="600px" style="text-align:center; font-size:23px">
+<tr style= "font-weight:bold">
+    <td style='border:3px solid #00adb5' width="40%">메서드</td>
+    <td style='border:3px solid #00adb5'>설명</td>
+</tr>
+<tr>
+    <td style='border:3px solid #00adb5' height= "60px">String getId()</td>
+    <td style='border:3px solid #00adb5'>해당 세션의 세션ID를 반환</td>
+</tr>
+<tr>
+    <td style='border:3px solid #00adb5' height= "60px">long getCreationTime()</td>
+    <td style='border:3px solid #00adb5'>세션의 생성된 시간을 반환</td>
+</tr>
+<tr>
+    <td style='border:3px solid #00adb5' height= "60px">long getLastAccessedTime()</td>
+    <td style='border:3px solid #00adb5'>클라이언트 요청이 마지막으로 시도된 시간을 반환</td>
+</tr>
+<tr>
+    <td style='border:3px solid #00adb5' height= "60px">void setMaxInactiveInterval(time)</td>
+    <td style='border:3px solid #00adb5'>세션을 유지할 시간을 초단위로 설정<br>
+    ※ 사진을 슬라이드처럼 보이게 할 때 사용</td>
+</tr>
+<tr>
+    <td style='border:3px solid #00adb5' height= "60px">boolean isNew()</td>
+    <td style='border:3px solid #00adb5'>클라이언트 세션ID를 할당하지 않은 경우 true 값을 반환<br>
+</tr>
+<tr>
+    <td style='border:3px solid #00adb5' height= "60px">void invalidate()</td>
+    <td style='border:3px solid #00adb5'>해당 세션을 모두 종료</td>
+</table>
+
+
+
+
 ## <a style="color:#00adb5">SERVLET</a> Life-Cycle
 Servlet class는 javaSE에서의 class와는 다르게 main method가 없다. 즉 <a style="color:red"><strong>객체의 생성부터 사용의 주체가 사용자가 아닌 Servlet Container에게 있다.</strong></a><br>
 Client가 요청(request) 하게 되면 Servlet Container는 Servlet 객체를 생성 (한번만)하고, 초기화 (한번만) 하며 요청에 대한 처리 ( 요청시마다 반복 )를 하게 된다. 또한 Servlet 객체가 필요없게 되면 제거하는 일까지 Container가 담당한다.
