@@ -153,7 +153,7 @@ long lat = session.getLastAccessedTime();
 
 ## <a style="color:#00adb5">Cookie & Session</a> 정리
 
-<table width="100%" height="700px" style="text-align:center; font-size:30px">
+<table width="100%" height="1100px" style="text-align:center; font-size:30px">
 <tr style='border:3px solid #00adb5'>
 <td width="20%" height="70px" style='border:3px solid #00adb5'></td>
 <td width="40%" style='border:3px solid #00adb5'>Session</td>
