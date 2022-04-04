@@ -73,7 +73,7 @@ n! / r!(n-r)! 이다.<br>
 <br>
 
 ## <a style="color:#00adb5">DP</a> 활용 - 0-1 Knapsack Problem
-배낭 ( Knapsack ) 문제는 배낭의 용량이 W일 때 N개의 물건과 각 물건의 무게 W 와 가치 V가 주어지고 배낭에 담을 수 있는 물건의 최대 가치를 찾는 문제이다.<br>
+배낭 ( Knapsack ) 문제는 <a style="color:red"><strong>배낭의 용량이 W일 때 N개의 물건과 각 물건의 무게 W 와 가치 V가 주어지고 배낭에 담을 수 있는 물건의 최대 가치를 찾는 문제</strong></a>이다.<br>
 냅색 문제에는 물건을 쪼갤 수 있어 무게나 가치가 소수점으로 나뉘는 문제와 0-1 Knapsack Problem 은 쪼개지지 않고 무게와 가치가 무조건 정수형태를 가지는 두 형태로 나뉜다. <br>
 0-1 Knapsack Problem 에 대해 알아보자.<br>
 물론 DP로 알아보자. ( Brute force나 다른 방법으로도 알아볼 수 있지만 시간 복잡도가 크기 때문에 DP가 좋은 방법일 것이다. )<br>
@@ -102,7 +102,7 @@ dp[i,w] 를 재귀적으로 정리하면<br>
 <br>
 
 
-## <a style="color:#00adb5"> 0-1 Knapsack Problem</a> 수행 과정
+### <a style="color:#00adb5"> 0-1 Knapsack Problem</a> 수행 과정
 <strong>문제</strong><br>
 배낭의 용량은 10KG 이고 각 물건의 무게와 가치는 다음과 같다.<br>
 5KG / 10만원<br>
@@ -142,3 +142,165 @@ i 번째 값들을 순서대로 고려해주면서 총 10kg을 1kg씩 늘려가�
 이 과정을 다 i = 4 인 값까지 다 반복하면 마지막에 있는 값이 가장 큰 가격을 가지는 배냥일 것이다.<br>
 <br>
 결국 부분 문제들의 최적의 값을 구해 그 값들을 메모이제이션하며 최종 값 까지 구해주는 것이다.<br>
+
+
+## <a style="color:#00adb5">DP</a> 활용 - 최장 증가 수열
+최장 증가 수열 ( Longest Increasing Subsequence ) 이란 <a style="color:red"><strong>어떤 수열이 왼쪽에서 오른쪽으로 나열돼 있으면, 그 배열 순서를 유지하면서 크기가 점진적으로 커지는 가장 긴 부분수열을 추출하는 문제</strong></a>이다.<br><br>
+문제를 풀어보면서 알아가보자.<br>
+<strong>문제</strong><br>
+3, 2, 6, 4, 5, 1 이라는 수열이 있다. 이 배열의 순서를 유지하면서 크기가 점진적으로 커지는 가장 긴 부분수열의 길이는 ?<br>
+<br>
+먼저 완전 탐색 ( Brute-force ) 로도 풀 수는 있다. <br>
+수열의 모든 부분 집합을 구해서 그 부분 집합이 증가 수열인지 판단하여 그 중 길이가 가장 긴 것을 구하면 된다.<br>
+그러나 !! 시간 복잡도가 O(2ⁿ) 이다. <br>
+수가 크면 기본적으로 문제에서 요구하는 시간 내에서는 못할 것이다. <br>
+그래서 이 방법을 대신해 DP를 사용한다 !
+
+
+### <a style="color:#00adb5"> 최장 증가 수열 ( LIS )</a> 수행 과정 - DP1
+먼저 구조를 파악해보자.<br>
+
+생각해야할 것은 <a style="color:red"><strong>i 원소를 끝으로 하는 최장증가수열 길이를 구하는 것이다.</strong></a><br><br>
+
+입력은 숫자열이 들어온다. LIS[i]= 3, 2, 6, 4, 5, 1<br>
+
+만약 <a style="color:red"><strong>LIS[i] 가 i번째 값을 포함한다면 i 보다 작은 j 값을 찾아야한다.</strong></a><br>
+j 값을 알 수 없으므로 모두 검색해야한다. 그 중에서 최대값을 찾아 1을 증가시켜 LIS[i]에 저장한다.<br>
+그리고 다 돌고나서 LIS[] 중에 최대값을 구한다.<br>
+예를 들면 ) LIS[5] 는 2, 4, 5로 5를 포함한다. 그러면 5보다 작은 값 들 중에 최대값을 찾는다. 그 값은 4고 LIS[5] = LIS[4] + 1 가 된다.<br>
+LIS[4] 는 2 이므로 LIS[5] 는 3이 된다.<br><br>
+
+DP를 이용한 LIS 는 일차원 배열을 가지고 계산한다.<br>
+그리고 중요한 것은 맨 뒤에 값이 최대값이 아니다.<br>
+ <a style="color:red"><strong>LIS[]를 구한 것들 중에 최대값을 구해야한다.</strong></a><br>
+예를 들면 ) 11 12 15 16 9 10 인 경우 LIS[5]에는 4가 들어가 있을 것이다. 그리고 10을 지나면 10이 9보다 크기 때문에 LIS[6] 은 5가 된다. 이 것은 잘못된 방식이다. LIS[5] 에는 1이 들어가고 LIS[6] 에는 2가 들어가는 게 맞다. <br>
+그래서 맨 뒤에 LIS[] 값이 최대값이 아니고 LIS[] 값 들 중에서 최대값을 구해야한다.<br>
+
+
+### <a style="color:#00adb5">실습해보즈아</a>
+DP 로 구현한 것은 시간복잡도가 <a style="color:red"><strong>O(N²)</strong></a> 이다.
+
+
+```java
+public class ListDp {
+	// input 배열
+	static int[] arr = { 3, 2, 6, 4, 5, 1 };
+	static int[] dp;
+	static int res = 0;
+
+	public static void main(String[] args) {
+		// LIS() 값 저장 배열
+		dp = new int[arr.length];
+
+		LIS();
+		System.out.println(res);
+
+	}
+
+	static void LIS() {
+		for (int i = 0; i < dp.length; i++) {
+			// 현재의 수만 수열에 넣었을 때 길이로 초기화 ( 자기자신 하나 )
+			dp[i] = 1;
+			// 자신의 앞쪽 값들 중 가장 긴 최장길이에 자신을 붙인다 ( +1 )
+			for (int j = 0; j < i; j++) {
+				if (arr[i] > arr[j] && dp[i] < dp[j] + 1) {
+					// 최댓값 갱신
+					dp[i] = dp[j] + 1;
+				}
+			}
+		}
+		// dp[] 중 최대값 구해서 res에 저장
+		for (int i = 0; i < dp.length; i++) {
+			res = Math.max(res, dp[i]);
+		}
+	}
+}
+```
+<hr>
+<strong>결과값</strong><br>
+3
+
+
+### <a style="color:#00adb5"> 최장 증가 수열 ( LIS )</a> 수행 과정 - 이진 검색 활용
+
+입력은 숫자열이 들어온다. LIS[i]= 3, 2, 6, 4, 5, 1<br>
+<br>
+이진 검색을 활용한 LIS 길이 탐색도 일차원 배열( dp[N] )을 활용한다.<br>
+그리고  <a style="color:red"><strong>저장할 위치 ( 변수 ) idx 와 수열을 순서대로 가져오는 i가 존재</strong></a>한다.<br>
+2가지의 부분 경우들이 생긴다.<br>
+하나는 idx 값 < i 값 인 것이고 하나는 idx 값 > i 값 인 것이다. 같다라는 경우는 무시한다.<br>
+먼저 idx 값 > i 값인 경우는 idx 값에 i 값을 넣고 idx를 +1 해준다.<br>
+다음 idx 값 < i 값인 경우는 idx 값을 i 값으로 바꾸고 idx는 그대로 유지한다. 여기서 i 값을 idx 값으로 바꿀 때 i 값은 idx 값 중에서 본인보다 큰 것중 가장 작은 값을 바꾼다. 예를 들면 i가 7일 때 idx에 6,8 이 존재하면 8을 7로 바꾼다.<br>
+여기서 이진 검색이 활용된다. 만약 i 가 본인보다 큰 것중 가장 작은 값을 바꿀 때 완전 탐색을 이용한다면 시간 복잡도는 기존 DP1과 비슷할 것이다. 그러나 여기서 이진 검색을 활용하며 시간복잡도를 O(NlogN) 으로 해준다. 이 둘의 차이는 N의 수가 커지면 커질 수록 어마어마 하다.<br>
+다음은 문제를 진행한 과정이다.<br>
+
+<center>
+<img width="70%" src="./../../images/dp21.jpg">
+</center>
+<center>
+<img width="70%" src="./../../images/dp22.jpg">
+</center>
+<br>
+
+
+### <a style="color:#00adb5">실습해보즈아</a>
+이진 검색을 활용한 DP 로 구현한 것은 <a style="color:red"><strong>O(NlogN)</strong></a> 이다.
+<br>
+
+```java 
+public class ListDp2 {
+	// input 배열
+	static int[] arr = { 3, 2, 6, 4, 5, 1 };
+	static int[] dp;
+	static int idx = 0;
+
+	public static void main(String[] args) {
+		// LIS() 값 저장 배열
+		dp = new int[arr.length];
+
+		LIS();
+		
+		// idx 가 0으로 시작해서 +1 해준다.
+		System.out.println(idx+1);
+
+	}
+
+    // 최장 증가 수열
+	static void LIS() {
+		dp[0] = arr[0];
+		for(int i=1; i<dp.length; i++) {
+			// i 값이 idx 값보다 클 경우 -> 
+			// idx + 1 하고 idx 값에 i 값 넣는다
+			if(arr[i] > dp[idx]) {
+				idx++;
+				dp[idx] = arr[i];
+			}
+			// idx 값이 i 값보다 클 경우 -> 
+			// idx 값은 그대로, i 값은 이진 검색을 통해 i 값보다 큰 값 중 가장 작은 값 자리에 넣는다.
+			else {
+				int lower = lower_bound(idx, arr[i]);
+				dp[lower] = arr[i];
+			}
+		}
+	}
+	
+	// 이진 검색
+	static int lower_bound(int end, int n) {
+		int start = 0;
+		
+		while(start < end) {
+			int mid = (start + end) / 2;
+			if(dp[mid] >= n) {
+				end = mid;
+			}else {
+				start = mid + 1;
+			}
+		}
+		
+		return end;
+	}
+}
+```
+<hr>
+<strong>결과값</strong><br>
+3
