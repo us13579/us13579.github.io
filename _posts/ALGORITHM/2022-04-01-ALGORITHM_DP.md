@@ -52,11 +52,14 @@ static void fibo(int n){
 
 - 메모이제이션 ( memoization )은 컴퓨터 프로그램을 실행할 때 <a style="color:red"><strong>이전에 계산한 값을 메모리에 저장해서 매번 다시 계산하지 않도록 하여 전체적인 실행 속도를 빠르게 하는 기술</strong></a>이다. <a style="color:red"><strong>동적 계획법의 핵심이 되는 기술</strong></a>이다.
 
+- 메모이제이션은 <a style="color:red"><strong>DP가 아니고 다른 하나의 기술</strong></a>이다.
+
 - 메모리제이션이 아니다 !! 기억하기 암기하기가 아니라 메모리에 넣기라고 생각하면 된다.
 
 - 피보나치 수를 구하는 알고리즘에서 fibo1(n)의 값을 계산하자마자 저장하면 실행시간을 O(n)으로 줄일 수 있다.
 
 - 메모이제이션로 피보나치 수열 구하는 방법<br>
+
 ```java
 static int fibo1(int n){
     if(n >= 2 && memo[n] == 0){
