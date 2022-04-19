@@ -19,7 +19,9 @@ sidebar:
 # 📚 <a style="color:#00adb5">Spring MVC</a>
 
 ## <a style="color:#00adb5">Controller</a>
-@Controller 와 @RequestMapping 선언
+<a style="color:red"><strong>@Controller 와 @RequestMapping 선언</strong></a><br>
+method 단위의 mapping이 가능
+
 
 ### <a style="color:#00adb5">@Controller</a>
 <a style="color:red"><strong>Controller Class는 Client의 요청을 처리</strong></a>
@@ -164,7 +166,47 @@ Spring MVC는 form에 입력한 data를 JavaBean 객체를 이용해 전송할 �
 ### <a style="color:#00adb5">View에서 Command 객체에 접근</a>
 Command 객체는 자동으로 반환되는 Model에 추가됨<br>
 Controller의 @RequestMapping annotation method에서 전달받은 Command 객체에 접근<br>
-@ModelAttribute를 사용하여 View에서 사용할 Command 객체의 이름을 변경할 수 있다.
+request에 저장되는 command 객체의 이름은 첫글자를 소문자로 변경한 것이다 ( ex, BoardDto -> boardDto )
+@ModelAttribute를 사용하여 View에서 사용할 Command 객체의 이름을 변경할 수 있다.<br>
+
+```java
+@Controller
+@RequestMapping("/board")
+public class BoardController{
+
+    @RequestMapping(value="/write.do", method = RequestMethod.POST)
+    public String write( @ModelAttribute("article") BoardDto boardDto ){
+        return "board/writeok";
+    }
+}
+
+/*
+-> writeok.jsp 에서는 
+-----
+제목 : ${article.subject}<br>
+내용 : ${article.content}
+-----
+으로 사용된다.
+만약 ModelAttribute를 사용하지 않는다면 article -> boardDto를 사용한다.
+*/
+
+```
+
+### <a style="color:#00adb5">@CookieValue annotation을 이용한 Cookie mapping</a>
+@CookieValue annotation을 이용한 Cookie mapping
+
+```java
+@Controller
+public class HomeController{
+
+    public String hello(@CookieValue(value="author", requires=false, defalutValue="user") String authorValue){
+        return "ok";
+    }
+}
+```
+
+
+### <a style="color:#00adb5">@RequestBody</a>
 
 
 
@@ -215,3 +257,195 @@ Controller의 @RequestMapping annotation method에서 전달받은 Command 객�
             HttpMessageConverter를 이용해서 객체를 HTTP 응답 스트림으로 변환한다.
         </td>
     </tr>
+
+
+
+## <a style="color:#00adb5">View</a>
+<a style="color:red"><strong>Controller에서는 처리 결과를 보여줄 View 이름이나 객체를 리턴하고, DispatcherServlet은 View 이름이나 View 객체를 이용하여 view 생성</strong></a><br>
+
+### <a style="color:#00adb5">ViewResolver</a>
+<a style="color:red"><strong>논리적 view와 실제 JSP파일 mapping</strong></a><br>
+
+InternalResourceViewResolver는 <a style="color:red"><strong>prefix + 논리뷰 + suffix</strong></a>로 설정<br>
+-> /WEB-INF/views/board.jsp<br>
+
+servlet-context.xml
+
+```xml
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+```
+
+### <a style="color:#00adb5">View</a> 이름 명시적 지정
+ModelAndView와 String 리턴 타입
+
+```java
+1. 
+@Controller
+public class HomeController{
+
+    @RequestMapping("/hello.do")
+    public ModelAndView hello(){
+        ModelAndView mav = new ModelAndView("hello");
+        return mav;
+    }
+}
+
+2.
+@Controller
+public class HomeController{
+
+    @RequestMapping("/hello.do")
+    public ModelAndView hello(){
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("hello");
+        return mav;
+    }
+}
+
+3.
+@Controller
+public class HomeController{
+
+    @RequestMapping("/hello.do")
+    public String hello(){
+        return "hello";
+    }
+}
+
+```
+
+### <a style="color:#00adb5">View</a> 이름 자동 지정
+RequestToViewNameTranslator를 이용하여 URL로 부터 view 이름을 결정<br>
+자동지정 유형<br>
+- return type이 Model이나 Map인 경우
+- return type이 void이면서 ServletResponse나 HttpServletResponse 타입의 parameter가 없는 경우
+
+```java
+@Controller
+public class HomeController{
+    
+    @RequestMapping("/hello.do")
+    public Map<String, Object> hello(){
+        Map<String, Object> model = new HashMap<String, Object>();
+        return model;
+    }
+}
+
+-> return type이 Map 이므로 hello가 view 이름이 된다.
+-> 크게 권장하지는 않는다.
+```
+
+
+### <a style="color:#00adb5">redirect view</a>
+Spring Framework는 기본적으로 페이지로 forward 된다.<br>
+이 때 redirect로 넘겨주고 싶을 때 사용<br>
+View 이름에 <a style="color:red"><strong>"redirect:" 접두어를 붙이면</strong></a> 지정한 페이지로 redirct 된다.
+
+```java
+@Controller
+public class BoardRegisterController{
+    @Autowired
+    private BoardService boardService;
+
+    @RequestMapping( value = "board/register.html", method=RequestMethod.POST)
+    public String register(@ModelAttribute("article") BoardDto boardDto) {
+        boardService.registerArticle(boardDto);
+        return "redirect:board/list.html?pg=1";
+    }
+}
+```
+
+
+## <a style="color:#00adb5">Model</a>
+<a style="color:red"><strong>View에 전달하는 데이터</strong></a>
+- @RequestMapping annotation이 적용된 method의 _Map, Model, ModelMap_
+- @RequestMapping method가 return하는 _ModelAndView_
+- @ModelAttribute annotation이 적용된 method가 _return 한 객체_
+
+### <a style="color:#00adb5">method의 argument로 받는 방식 ( Map, Model, ModelMap )</a>
+
+```java
+1. Map
+@Controller
+public class HomeController{
+
+    @RequestMapping("/hello.do")
+    public String hello(Map model){
+        model.put("msg". "hi");
+        return "hello";
+    }
+}
+
+2. Model
+@Controller
+public class HomeController{
+
+    @RequestMapping("/hello.do")
+    public String hello(Model model){
+        model.addAttribute("msg". "hi");
+        return "hello";
+    }
+}
+
+3. ModelMap
+@Controller
+public class HomeController{
+
+    @RequestMapping("/hello.do")
+    public String hello(ModelMap model){
+        model.addAttribute("msg". "hi");
+        return "hello";
+    }
+}
+
+```
+
+### <a style="color:#00adb5">Model 생성 - Model Interface 주요 method</a>
+- Model addAttribute(String name, Object value);
+- Model addAttribute(Object value);
+- Model addAllAttributes(Collection<?> values);
+- Model addAllAttributes(Map<String, ?> attributes);
+- Model mergeAttributes(Map<String, ?> attributes);
+- boolean containsAttribute(String name);
+
+
+### <a style="color:#00adb5">ModelAndView를 통한 Model 설정</a>
+- Controller에서 처리결과를 보여줄 view 와 view에 전달할 값 ( model )을 저장하는 용도로 사용
+- setViewName(String viewname);
+- addObject(String name, Object value);
+<br>
+
+MAV 는 addObject 이다 !!<br>
+Model 생성은 addAttribute 이다 !!
+
+```java
+@Controller
+public class HomeController{
+
+    @RequestMapping("/hello.do")
+    public ModelAndView hello(){
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("hello");
+        mav.addObject("msg","안녕하세요);
+        return mav;
+    }
+}
+```
+
+
+### <a style="color:#00adb5">@ModelAttribute를 이용한 model data 처리</a>
+@RequestMapping annotation이 적용되지 않은 별도 method로 모델이 추가될 객체를 생성한다.<br>
+주로 공통으로 보내주는 구문에 많이 사용한다.<br>
+
+```java
+
+@ModelAttribute("modelMsg")
+public String msg(){
+    return "bye";
+}
+
+-> ${modelMsg} 로 불러주면 bye가 출력된다.
+```
