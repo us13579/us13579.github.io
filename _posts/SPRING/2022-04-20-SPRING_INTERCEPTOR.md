@@ -69,7 +69,7 @@ servlet-context.xml 에 설정을 한다.<br>
 <br>
 DispatcherServlet은 HandlerMapping에게 Client Request를 수행할 Handler를 찾도록 요청을 보낸다.<br><br>
 
-이때 _HandlerExecutionChain ( 핸들러 실행 체인 )_ 이 동작하는데, 이 것은 _하나 이상의 HandlerInterceptor_를 거쳐 Controller가 실행되도록 구성되어 있다.<br>
+이때 _HandlerExecutionChain ( 핸들러 실행 체인 )_ 이 동작하는데, 이 것은 *하나 이상의 HandlerInterceptor*를 거쳐 Controller가 실행되도록 구성되어 있다.<br>
 HandlerInterceptor를 등록하지 않았을 때는 바로 Controller를 실행한다.<br><br>
 
 HandlerInterceptor를 거쳐 Request에 대해 원하는 작업, 로직을 수행한 후 Controller로 Request 객체를 전달한다.<br>

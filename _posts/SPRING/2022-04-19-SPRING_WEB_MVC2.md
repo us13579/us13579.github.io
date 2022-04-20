@@ -257,6 +257,7 @@ public class HomeController{
             HttpMessageConverter를 이용해서 객체를 HTTP 응답 스트림으로 변환한다.
         </td>
     </tr>
+</table>
 
 
 
@@ -267,7 +268,7 @@ public class HomeController{
 <a style="color:red"><strong>논리적 view와 실제 JSP파일 mapping</strong></a><br>
 
 InternalResourceViewResolver는 <a style="color:red"><strong>prefix + 논리뷰 + suffix</strong></a>로 설정<br>
--> /WEB-INF/views/board.jsp<br>
+-> /WEB-INF/views/board.jsp<br><br>
 
 servlet-context.xml
 
@@ -361,9 +362,9 @@ public class BoardRegisterController{
 
 ## <a style="color:#00adb5">Model</a>
 <a style="color:red"><strong>View에 전달하는 데이터</strong></a>
-- @RequestMapping annotation이 적용된 method의 _Map, Model, ModelMap_
-- @RequestMapping method가 return하는 _ModelAndView_
-- @ModelAttribute annotation이 적용된 method가 _return 한 객체_
+- @RequestMapping annotation이 적용된 method의 *Map, Model, ModelMap*
+- @RequestMapping method가 return하는 *ModelAndView*
+- @ModelAttribute annotation이 적용된 method가 *return 한 객체*
 
 ### <a style="color:#00adb5">method의 argument로 받는 방식 ( Map, Model, ModelMap )</a>
 
