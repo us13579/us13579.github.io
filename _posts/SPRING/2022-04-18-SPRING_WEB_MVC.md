@@ -4,7 +4,7 @@ title:  "SPRING_WEB MVC_1"
 categories: 
     - SPRING
 tags: 
-    - [2022-04, WEB, SPRING,]
+    - [2022-04, WEB, SPRING, BACKEND, FRAMEWORK]
 sidebar:
     nav: "docs"
 ---
