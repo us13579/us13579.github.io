@@ -69,15 +69,15 @@ public class TestController{
 }
 ```
 <br>
-*TestController* 내에서 발생하는 Exception에 대한 예외가 발생하면 *handleException* 메서드가 모두 처리해준다.<br>
+<a style="color:red"><strong>*TestController* 내에서 발생하는 Exception에 대한 예외가 발생하면 *handleException* 메서드가 모두 처리해준다.</strong></a><br>
 그러나 이 예외처리는 선언된 Controller에서만 사용할 수 있다.<br>
 그래서 다른 Controller에서 같은 작업을 반복할 수도 있다.
 
 
 
 ### <a style="color:#00adb5">전역 처리</a>
-외부 class로 빼서<a style="color:red"><strong>@ControllerAdvice</strong></a> annotation을 통해 처리<br>
-모든 Controller에서 발생하는 예외를 동일하게 처리할 수 있다.<br>
+외부 class로 빼서 <a style="color:red"><strong>@ControllerAdvice</strong></a> annotation을 통해 처리<br>
+<a style="color:red"><strong>모든 Controller에서 발생하는 예외를 처리할 수 있다.</strong></a><br>
 
 ```java
 @ControllerAdvice
@@ -110,7 +110,7 @@ public class ExceptionControllerAdvice {
 이 에러가 발생하게 되면 web.xml에서 설정해준 것 처럼 에러를 exception으로 받아들여서 <br>
 그 exception이 발생 (@ExceptionHandler(NoHandlerFoundException.class) 이 구문 ) 하면 *handle404* 메서드를 실행시킨다.<br>
 <br>
-간단하게 말하면 handleException 메서드는 400 error 제외 ( 500 error 는 exception이 나서 error가 난 것이다 ) , handle404 메서는 400 error가 발생했을 때 실행된다.<br><br>
+간단하게 말하면 <a style="color:red"><strong>handleException 메서드는 400 error 제외 ( 500 error 는 exception이 나서 error가 난 것이다 ) , handle404 메서드는 400 error가 발생했을 때 실행된다.</strong></a><br><br>
 
 Controller 에서의 *@ExceptionHandler* 와 ControllerAdvice 에서의 *@ExceptionHandler* 중 높은 우선순위는 controller 에서의 *@ExceptionHandler* 이다.
 
