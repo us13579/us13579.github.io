@@ -2,7 +2,7 @@
 layout: single
 title:  "SPRING_WEB MVC_1"
 categories: 
-    - SPRING
+    - FRAMEWORK
 tags: 
     - [2022-04, WEB, SPRING, BACKEND, FRAMEWORK]
 sidebar:
