@@ -2,7 +2,7 @@
 layout: single
 title:  "SPRING_IoC & Container"
 categories: 
-    - SPRING
+    - FRAMEWORK
 tags: 
     - [2022-04, WEB, SPRING, BACKEND, FRAMEWORK]
 sidebar:

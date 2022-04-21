@@ -31,9 +31,9 @@ docs:
     - title: "WEB"
       url: /category/WEB/
       category: "WEB"
-    - title: "SPRING"
-      url: /category/SPRING/
-      category: "SPRING"
+    - title: "FRAMEWORK"
+      url: /category/FRAMEWORK/
+      category: "FRAMEWORK"
     - title: "JAVA"
       url: /category/JAVA/
       category: "JAVA"
