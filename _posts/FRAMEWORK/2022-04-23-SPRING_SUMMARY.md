@@ -125,7 +125,7 @@ testweb은 DB 스키마 명이다.
 ```
 <br>
 
-- *context-scan 설정* <br>
+- *component-scan 설정* <br>
 model ( service, mapper ( dao )) , aop<br>
 service는 @Service , dao는 @Repository 를 적어줘야하고 mapper는 interface라서 annotation이 없다.
 
@@ -160,7 +160,7 @@ service는 @Service , dao는 @Repository 를 적어줘야하고 mapper는 interf
     <annotation-driven />
 ```
 
-- *context-scan 설정* <br>
+- *component-scan 설정* <br>
 controller<br>
 Controller는 @Controller를 적어줘야한다.
 
@@ -240,7 +240,7 @@ img, css, js 는 *DispatcherServlet을 거치면서 매핑할 필요가 없다.*
 구조로 데이터가 이동하며 처리된다.
 
 ###  <a style="color:#00adb5">디버깅을 위한 Log4j 정의</a>
-<a style="color:red"><strong>log4j는 Apache 에서 만든 오픈소스 라이브러리</strong></a>로 프로그램을 작성하는 도중에 로그를 남기기 위해 사용되는 자바 기반 로깅 유틸리티로 <strong>디버그용 도구</strong> 로 주로 사용된다.<br><br>
+<a style="color:red"><strong>log4j는 Apache 에서 만든 오픈소스 라이브러리</strong></a>로 프로그램을 작성하는 도중에 로그를 남기기 위해 사용되는 자바 기반 로깅 유틸리티로 <strong>디버그용 도구</strong> 로 주로 사용된다.<br>
 
 - *pom.xml에 log4j 추가, 확인*
 
@@ -288,8 +288,6 @@ img, css, js 는 *DispatcherServlet을 거치면서 매핑할 필요가 없다.*
 			<scope>runtime</scope>
 		</dependency>
 ```
-<br>
-
 - *Log4j.xml 작성*<br>
 src/main/resources밑에 <strong>log4j.xml</strong>을 만든다.<br>
 
@@ -336,7 +334,6 @@ src/main/resources밑에 <strong>log4j.xml</strong>을 만든다.<br>
 	
 </log4j:configuration>
 ```
-<br>
 
 - *Log4j.xml 사용*<br>
 Controller 에서 선언<br>
@@ -344,7 +341,6 @@ Controller 에서 선언<br>
 ```java
 	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 ```
-<br>
 
 사용<br>
 
@@ -387,7 +383,6 @@ Log4j 설정 완료 !!
 sql문 처리 xml
 - member.xml
 - guestbook.xml
-
 <br>
 
 *src/main/webapp/resources*
@@ -397,13 +392,11 @@ sql문 처리 xml
     - css 작성
 - js
     - js 작성
-
 <br>
 
 *src/main/webapp/WEB-INF/spring*
 - servlet-context.xml
 - root-context.xml
-
 <br>
 
 *src/main/webapp/WEB-INF/views*

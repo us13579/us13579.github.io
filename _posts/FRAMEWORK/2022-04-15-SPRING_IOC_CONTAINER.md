@@ -38,20 +38,51 @@ sidebar:
 - 객체간 결합도가 높으면
     - 해당 클래스가 유지보수 될 때 그 클래스와 결합된 다른 클래스도 같이 유지보수 되어야할 가능성이 높음 ( 영향을 많이 준다. )
 <br><br>
-객체간 강한 결합은 클래스 호출 방식이다. 클래스내에 선언과 구현이 모두 되어 있기 때문에 다양한 형태로 변화가 불가능 하다.<br>
-구현체 ( Member, Admin )를 클래스 ( Home )에서 직접 생성해서 사용한다. 그래서 구현체가 변경되거나 교체되면 클래스도 수정해야 할 가능성이 있다.
+
+### <a style="color:#00adb5">객체간 강한 결합</a>
+- *클래스* 호출 방식
+- 클래스내에 선언과 구현이 모두 되어 있으므로 다양한 형태로 변화가 불가능 하다.
+
+<center>
+<img width="70%" src="./../../images/ioc.png">
+</center>
+<br>
+
+- MemberService 구현체와 AdminService 구현체를 HomeController에서 직접 생성하여 사용한다.
+- MemberService 또는 AdminService가 교체되거나 내부 코드가 변경되면 HomeController까지 수정해야할 가능성이 있다.
+- <a style="color:red"><strong>강한 결합</strong></a>
 
 ```java
 public class HomeController{
+    ---
     private MemberServiceImpl memberService = new MemberServiceImpl();
     private AdminServiceImpl adminservice = new AdminServiceImpl();
+    ---
+    -> 구현체를 직접 생성
 
-    ...
+
+    public void addUser(MemberDto memberDto){
+        memberService.joinMember(memberDto);
+        adminService.registerMember(memberDto);
+    }
 }
 ```
 
-<a style="color:red"><strong>객체 간의 강한 결합을 다형성을 통해 결합도를 낮춘다.</strong></a><br>
-<a style="color:red"><strong>인터페이스 호출 방식</strong></a>이며 구현 클래스 교체가 용이해 다양한 형태로 변화 가능하다.
+### <a style="color:#00adb5">객체 간의 강한 결합을 다형성을 통해 결합도를 낮춤</a>
+
+#### <a style="color:#00adb5">인터페이스</a> 호출 방식
+
+- 구현 클래스 교체가 용이하여 다양한 형태로 변화 가능
+- 하지만 인터페이스 교체 시 호출 클래스도 수정해야 함
+
+<center>
+<img width="70%" src="./../../images/ioc2.png">
+</center>
+<br>
+
+- <a style="color:red"><strong>객체 간의 강한 결합을 다형성을 통해 결합도를 낮춘다.</strong></a><br>
+- MemberService와 AdminService는 CommonService 를 상속받는다.<br>
+- HomeController에서 각 서비스를 이용 시 MemberService와 AdminService는 CommonService Type으로 사용 가능하다.
 
 ```java
 
@@ -67,12 +98,30 @@ public class HomeController{
     private CommonService memberService = new MemberServiceImpl();
     private CommonService adminservice = new AdminServiceImpl();
     // 모두 CommonService 타입으로 이용 가능
-    ...
+
+    public void addUser(MemberDto memberDto){
+        memberService.registerMember(memberDto);
+        adminService.registerMember(memberDto);
+    }
+
 }
 ```
 
-<a style="color:red"><strong>객체 간의 강한 결합을 Factory를 통해 결합도를 낮춘다.</strong></a><br>
-<a style="color:red"><strong>팩토리 호출 방식</strong></a>이며 팩토리가 구현 클래스를 생성하므로 클래슨느 팩토리를 호출한다. 클래스에 팩토리를 호출하는 소스가 들어가야 한다. 이것 자체가 팩토리에 의존함을 의미한다.
+#### <a style="color:#00adb5">팩토리</a> 호출 방식
+
+- 팩토리 방식은 팩토리가 구현 클래스를 생성하므로 클래스는 팩토리를 호출한다.
+- 인터페이스 변경 시 팩토리만 수정하면 된다. 호출 클래스에는 영향을 미치지 않는다.
+- 하지만 클래스에 팩토리를 호출하는 소스가 들어가야한다. 그것이 팩토리에 의존함을 의미한다.
+
+<center>
+<img width="70%" src="./../../images/ioc3.png">
+</center>
+<br>
+
+- <a style="color:red"><strong>객체 간의 강한 결합을 팩토리를 통해 결합도를 낮춘다.</strong></a><br>
+- 각 Service를 생성하여 반환하는 Factory를 사용
+- Service를 이용하는 쪽에서는 interface만 알고 있으면 어떤 구현체가 어떻게 생성되는지에 대해 알 필요가 없다.
+- 이 Factory 패턴이 적용된 것이 Container의 기능이며 이 Container의 기능을 제공해 주고자 하는 것이 IoC 모듈이다.
 
 ```java
 // 각 서비스를 생성하여 반환해주는 factory
@@ -88,18 +137,66 @@ public class ServiceFactory{
 
 public class HomeController{
     private CommonService memberService = ServiceFactory.getMemberService();
-
     private CommonService adminservice = ServiceFactory.getAdminService();
     
     ...
 }
 ```
 
-<a style="color:red"><strong>객체 간의 강한 결합을 Assembler를 통해 결합도를 낮춘다.</strong></a><br>
-<a style="color:red"><strong>IoC 호출 방식</strong></a>이며 팩토리 패턴의 장점을 더하여 어떠한 것 에도 의존하지 않는 형태가 되었다. 실행시점( RunTime )에 클래스 간의 관계가 형성 된다.<br>
-applicationContext.xml에 bean을 활용하여 id, class 를 주고 그것을 가져와 사용한다.<br>
-Service 구현체 객체의 생성 및 관리를 Spring Container ( 외부 조립기 역할 Assemblr )가 하는 것이다.
+#### <a style="color:#00adb5">IoC</a> 호출 방식
 
+- 팩토리 패턴의 장점을 더하여 어떠한 것에도 의존하지 않는 형태가 된다.
+- 실행시점 ( runtime )에 클래스 간의 관계가 형성이 됨
+
+<center>
+<img width="70%" src="./../../images/ioc4.png">
+</center>
+<br>
+
+- 각 Service의 LifeCycle을 관리하는 Assembler를 사용한다.
+- Spring Container가 외부 조립기(Assembler) 역할을 한다.
+
+<br>
+
+*servlet-context.xml*에 bean 설정을 해준다 !!<br>
+xml 버젼과 annotation 버젼이 있는데 annotation 버젼을 많이 사용한다.<br>
+Spring 구현체 객체의 생성 및 관리를 *Spring Container* 가 해준다.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">+
+
+    <!-- xml 버젼 -->
+    <bean id="memberService" class="com.test.hello.service2.MemberServiceImpl"/>
+    <bean id="adminService" class="com.test.hello.service2.AdminServiceImpl"/>
+
+    <!-- annotation 버젼 -->
+    <context:component-scan base-package="com.test.hello.service2" />
+```
+
+```java
+    // xml 버젼
+    ApplicationContext context = new ClassPathXmlApplicationContext("com/test/hello/controller4/applicationContext.xml");
+    CommonService memberService = context.getBean("memberService", MemberService.class);
+    CommonService adminService = context.getBean("adminService", AdminService.class);
+
+    // annotation 버젼
+    @Service
+    public class MemberService{
+
+    }
+
+    @Service
+    public class AdminService{
+
+    }
+```
 
 
 
@@ -115,7 +212,7 @@ Service 구현체 객체의 생성 및 관리를 Spring Container ( 외부 조�
     - Lookup 한 Object를 필요한 타입으로 Casting 해 주어야 함
     - Naming Exception을 처리하기 위한 로직이 필요하다.
     - 쉽게 말하면 우리가 다 해야한다.
-- <a style="color:red"><strong>Dependency Injection</strong></a>
+- <a style="color:red"><strong>Dependency Injection ( DI )</strong></a>
     - 스프링이 다른 프레임워크와 차별화되어 제공하는 의존관계 주입 
     - <a style="color:red"><strong>객체를 직접 생성하는 것이 아니라 외부에서 생성한 후 주입 시켜주는 방식</strong></a>
     - 결합도가 낮아지고 유연성이 높아진다.
@@ -176,6 +273,21 @@ Service 구현체 객체의 생성 및 관리를 Spring Container ( 외부 조�
 
 ## <a style="color:#00adb5">Spring Container</a> 
 <center>
-<img width="60%" src="./../../images/spring4.png">
+<img width="40%" src="./../../images/spring4.png">
 </center>
 <br>
+
+- <a style="color:red"><strong>BeanFactory</strong></a>
+    - Bean 객체에 대한 생성과 제공을 담당
+    - 단일 유형의 객체를 생성하는 것이 아니라, 여러 유형의 빈을 생성, 제공
+    - 객체간의 연관 관계를 설정, 클라이언트의 요청 시 빈을 생성
+    - 빈의 라이프 사이클을 관리
+
+- <a style="color:red"><strong>ApplicationContext</strong></a>
+    - BeanFactory가 제공하는 모든 기능 제공
+    - 엔터프라이즈에 애플리케이션을 개발하는데 필요한 여러 기능을 추가함
+    - 컨테이너 생성시 모든 빈 정보를 메모리에 로딩함
+
+- <a style="color:red"><strong>WebApplicationContext</strong></a>
+    - 웹 환경에서 사용할 때 필요한 기능이 추가된 애플리케이션 컨텍스트
+    - 가장 많이 사용하며 특히 XmlWebApplicationContext를 가장 많이 사용
