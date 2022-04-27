@@ -34,8 +34,6 @@ ResponseEntity는 HttpRequest에 대한 응답 데이터를 포함하는 클래�
 
 
 ```java
-package com.ssafy.guestbook.controller;
-
 import java.util.List;
 
 import org.slf4j.Logger;
