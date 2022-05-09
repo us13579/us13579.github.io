@@ -166,4 +166,7 @@ Vue Instance Life Style을 크게 나누면
 
 ### <a style="color:#00adb5">Vue computed</a>
 
+종속 대상을 따라 저장(캐싱) 된다는 것이다.
+watch 보다는 computed를 권장한다
+
 ### <a style="color:#00adb5">Vue watch</a>
