@@ -111,7 +111,7 @@ sidebar:
 
 ## <a style="color:#00adb5">Data는 반드시 함수여야 한다</a>
 
-- <big>Data</big>는 컴포넌트 인스턴스의 함수여야한다.
+- <big>Data</big>는 <a style="color:red"><strong>컴포넌트 인스턴스의 함수</strong></a>여야한다.
 - 밑에 예제는 버튼을 클릭하면 숫자가 하나씩 증가하는 것이다.
 
 ```html
@@ -141,6 +141,8 @@ sidebar:
   });
 </script>
 ```
+
+- 출력화면
 
 <br>
 <center>
