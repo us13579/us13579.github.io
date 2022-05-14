@@ -182,4 +182,4 @@ sidebar:
 
 - <big><strong>Vue Method</strong></big>    
     - Vue Instance는 생성과 관련된 <a style="color:red"><strong>data 및 method의 정의</strong></a> 가능
-    - method안에서 data를 `"this.데이터이름"` 으로 접근 가능
+    - method안에서 data를 `this.데이터이름` 으로 접근 가능
