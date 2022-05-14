@@ -161,12 +161,212 @@ Vue Instance Life Style을 크게 나누면
 ## <a style="color:#00adb5">Vue Instance 속성</a>
 
 ### <a style="color:#00adb5">Vue Method</a>
+- Vue Instance는 생성과 관련된 <a style="color:red"><strong>data 및 method의 정의 가능</strong></a>
+- method안에서 data를 `this.데이터이름` 으로 접근 가능
+
+- <big>실습</big>
+
+```html
+<body>
+    <div id="app">
+        <div>data : {{msg}}</div>
+        <div>method kor : {{helloKor()}}</div>
+        <div>method eng : {{helloEng()}}</div>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            name: 'JS',
+            msg: 'Data입니다.',
+        },
+        methods: {
+            helloKor(){
+                return "안녕 " + this.name;
+            },
+            helloEng(){
+                return "Hello " + this.name;
+            }
+        }
+    })
+</script>
+```
+
+- <big>실행 결과</big>
+
+<center>
+<img width="70%" src="./../../images/method.png">
+</center>
+<br>
 
 ### <a style="color:#00adb5">Vue filter</a>
+- 뷰의 필터는 <a style="color:red"><strong>화면에 표시되는 텍스트의 형식을 쉽게 변환</strong></a>해주는 기능
+- filter를 이용하여 표현식에 새로운 결과 형식을 적용
+- 중괄호 보간법 [{{}}] 또는 v-bind 속성에서 사용이 가능
+
+```html
+<!-- 중괄호 보간법 -->
+{{ message | capitalize }}
+
+<!-- v-bind -->
+<div v-bind:id="rawId | formatId"></div>
+```
+
+- <big>전역 필터</big>
+
+```js
+Vue.filter(
+  'count1', (val) => {
+    if(val.length == 0){
+      return;
+    }
+    return `${val} : ${val.length}자`;
+  }
+)
+```
+
+- <big>지역 필터</big>
+
+```js
+new Vue({
+  el: "#app",
+  filters: {
+    count1(val, alternative){
+      if(val.length == 0){
+        return alternative;
+      }
+      return `${val} : ${val.length}자`;
+    }
+  }
+})
+```
+
+- <big>실습</big>
+금액은 천 단위마다 ',' 찍기<br>
+번호는 사이에 '-' 넣기<br>
+
+```html
+<body>
+    <div id="app">
+       <div>
+           금액 : <input type="text" v-model="msg1"><br>
+           전화번호 : <input type="text" v-model="msg2">
+       </div>
+       <div>
+           <h3>{{msg1 | price}}</h3>
+           <h3>{{msg2 | mobile}}</h3>
+       </div>
+    </div>
+</body>
+<script>
+    Vue.filter('price', (value) => {
+        if(!value) return value;
+        return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    });
+    Vue.filter('mobile', (value) => {
+        if(!value || !(value.length === 10 || value.length === 11)) return value;
+        return value.replace(/^(\d{3})(\d{3,4})(\d{4})/g, '$1-$2-$3');
+    });
+    new Vue({
+        el: "#app", 
+        data: {
+            msg1: '', msg2: '',
+        },
+    });
+</script>
+```
+
+- <big>실행 결과</big>
+
+<center>
+<img width="70%" src="./../../images/filter.png">
+</center>
+<br>
 
 ### <a style="color:#00adb5">Vue computed</a>
+- 특정 데이터의 <a style="color:red"><strong>변경사항을 실시간으로 처리</strong></a>
+- <a style="color:red"><strong>캐싱을 이용</strong></a>하여 데이터의 변경이 없을 경우 캐싱된 데이터를 반환 >> 값
+- Setter와 Getter를 직접 지정할 수 있음
+- 작성은 method 형태로 작성하지만 Vue에서 proxy 처리하여 property 처럼 사용
+- 종속 대상을 따라 저장(캐싱) 된다는 것이다.
+- watch 보다는 computed를 권장한다
 
-종속 대상을 따라 저장(캐싱) 된다는 것이다.
-watch 보다는 computed를 권장한다
+- <big>실습</big>
+
+```html
+<body>
+    <div id="app">
+        <p>원본 메세지 : "{{ msg }}"</p>
+        <p>역순으로 표시한 메세지 : "{{ reverseMsg }}"</p>
+        <input type="text" v-model="msg">
+    </div>
+</body>
+<script>
+   new Vue({
+       el: "#app",
+       data: {
+           msg: '',
+       },
+       computed: {
+           reverseMsg: function(){
+               return this.msg.split('').reverse('').join('');
+           },
+       },
+   });
+</script>
+```
+
+- <big>실행 결과</big>
+
+<center>
+<img width="70%" src="./../../images/computed.png">
+</center>
+<br>
+
+### <a style="color:#00adb5">Vue computed VS Vue method</a>
+
+computed 속성은 Vue 인스턴스가 생성될 때, <a style="color:red"><strong>값을 받아 계산하여 저장해 놓는다. ( 캐싱 )</strong></a><br>
+결과적으로 3번 출력되는 경우 <big>한 번</big> 실행하는 것과 같다.
+<br><br>
+method 는 <a style="color:red"><strong>출력될 때 마다 계산</strong></a>한다.<br>
+겷과적으로 3번 출력되는 경우 <big>세 번</big> 실행하는 것과 같다.
+
 
 ### <a style="color:#00adb5">Vue watch</a>
+- Vue Instance의 <a style="color:red"><strong>특정 property 가 변경될 때 실행할 콜백 함수 설정</strong></a>
+- <big>Computed</big>는 종속된 data가 변경되었을 경우 <big>그 data를 다시 계산하여 캐싱</big>한다.
+- <big>Watch</big>의 경우는 data가 변경되었을 경우 <big>다른 data를 ( 변경하는 ) 작업</big>을 한다.
+
+- <big>실습</big>
+
+```html
+<body>
+    <div id="app">
+        <p>원본 메세지 : "{{ msg }}"</p>
+        <p>역순으로 표시한 메세지 : "{{ reverseMsg }}"</p>
+        <input type="text" v-model="msg">
+    </div>
+</body>
+<script>
+   new Vue({
+       el: "#app",
+       data: {
+           msg: '',
+           reverseMsg: '',
+       },
+       watch: {
+           msg: function(newVal, oldVal){
+               this.reverseMsg = newVal.split('').reverse('').join('');
+           },
+       },
+   });
+</script>
+```
+
+- <big>실행 결과</big>
+
+<center>
+<img width="70%" src="./../../images/watch.png">
+</center>
+<br>
