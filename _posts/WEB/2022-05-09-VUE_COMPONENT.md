@@ -175,7 +175,7 @@ sidebar:
   // 하위 컴포넌트
   Vue.component("ChildComponent", {
     props: ["propsdata"],
-    template: `<span>{{ propsdata }}</span>`,
+    template: `<span>{{propsdata}}</span>`,
   });
   // 상위 컴포넌트
   new Vue({
@@ -197,12 +197,12 @@ sidebar:
 - 랜더링 과정
   1. new Vue()로 상위 컴포넌트인 인스턴스를 하나 생성
   2. Vue.component()를 이용하여 하위 컴포넌트인 ChildComponent를 생성
-  3. \<div id="app"> 내부에 \<child-component> 가 있기 때문에 하위 컴포넌트가 된다. 처음 생성한 인스턴스 객체 ( Vue ) 가 #app의 요소를 가지기 때문에 부모와 자식 관계가 성립한다.
-  4. 하위 컴포넌트에 props 속성을 정의 ['propsdata']
+  3. `<div id="app">` 내부에 `<child-component>` 가 있기 때문에 하위 컴포넌트가 된다. 처음 생성한 인스턴스 객체 ( Vue ) 가 #app의 요소를 가지기 때문에 부모와 자식 관계가 성립한다.
+  4. 하위 컴포넌트에 props 속성을 정의 `['propsdata']`
   5. html에 컴포넌트 태그(child-component)를 추가한다.
   6. 하위 컴포넌트에 v-bind 속성을 사용하면 상위 컴포넌트의 data의 key에 접근이 가능하다. ( message ) - 그냥 문자열이면 : 사용 x, 객체를 사용하면 : 사용
   7. 상위 컴포넌트의 message 속성 값인 String 값이 하위 컴포넌트의 propsdata로 전달된다.
-  8. 하위 컴포넌트의 template 속성에 정의된 \<span>{{propsdata}}\</span>에게 전달된다.
+  8. 하위 컴포넌트의 template 속성에 정의된 `<span>{{propsdata}}\</span>`에게 전달된다.
 
 ### <a style="color:#00adb5">동적 props</a>
 
