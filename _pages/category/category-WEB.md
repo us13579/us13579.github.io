@@ -5,7 +5,7 @@ categories: WEB
 permalink: /category/WEB/
 author_profile: true
 sidebar:
-    nav: "docs"
+nav: "docs"
 taxonomy: WEB
 ---
 

@@ -4,5 +4,5 @@ layout: tags
 permalink: /tag/
 author_profile: true
 sidebar:
-    nav: "docs"
+nav: "docs"
 ---

@@ -5,7 +5,7 @@ categories: CSS
 permalink: /category/CSS/
 author_profile: true
 sidebar:
-    nav: "docs"
+nav: "docs"
 taxonomy: CSS
 ---
 

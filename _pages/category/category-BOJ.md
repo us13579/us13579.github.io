@@ -5,7 +5,7 @@ categories: BOG
 permalink: /category/BOJ/
 author_profile: true
 sidebar:
-    nav: "docs"
+nav: "docs"
 taxonomy: BOJ
 ---
 

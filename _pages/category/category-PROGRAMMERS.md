@@ -5,7 +5,7 @@ categories: PROGRAMMERS
 permalink: /category/PROGRAMMERS/
 author_profile: true
 sidebar:
-    nav: "docs"
+nav: "docs"
 taxonomy: PROGRAMMERS
 ---
 

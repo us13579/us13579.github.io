@@ -5,7 +5,7 @@ categories: JAVASCRIPT
 permalink: /category/JAVASCRIPT/
 author_profile: true
 sidebar:
-    nav: "docs"
+nav: "docs"
 taxonomy: JAVASCRIPT
 ---
 

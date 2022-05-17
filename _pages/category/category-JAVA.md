@@ -5,7 +5,7 @@ categories: JAVA
 permalink: /category/JAVA/
 author_profile: true
 sidebar:
-    nav: "docs"
+nav: "docs"
 taxonomy: JAVA
 ---
 
