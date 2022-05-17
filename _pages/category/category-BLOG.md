@@ -5,7 +5,7 @@ categories: BLOG
 permalink: /category/BLOG/
 author_profile: true
 sidebar:
-    nav: "docs"
+nav: "docs"
 taxonomy: BLOG
 ---
 

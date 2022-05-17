@@ -5,7 +5,7 @@ categories: SWEA
 permalink: /category/SWEA/
 author_profile: true
 sidebar:
-    nav: "docs"
+nav: "docs"
 taxonomy: SWEA
 ---
 

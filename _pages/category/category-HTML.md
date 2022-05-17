@@ -5,7 +5,7 @@ categories: HTML
 permalink: /category/HTML/
 author_profile: true
 sidebar:
-    nav: "docs"
+nav: "docs"
 taxonomy: HTML
 ---
 

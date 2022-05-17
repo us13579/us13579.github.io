@@ -5,7 +5,7 @@ categories: ALGORITHM
 permalink: /category/ALGORITHM/
 author_profile: true
 sidebar:
-    nav: "docs"
+nav: "docs"
 taxonomy: ALGORITHM
 ---
 

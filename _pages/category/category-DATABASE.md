@@ -5,7 +5,7 @@ categories: DATABASE
 permalink: /category/DATABASE/
 author_profile: true
 sidebar:
-    nav: "docs"
+nav: "docs"
 taxonomy: DATABASE
 ---
 

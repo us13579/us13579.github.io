@@ -5,7 +5,7 @@ categories: TIL
 permalink: /category/TIL/
 author_profile: true
 sidebar:
-    nav: "docs"
+nav: "docs"
 taxonomy: TIL
 ---
 
