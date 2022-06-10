@@ -51,7 +51,7 @@ MST를 풀이하는 알고리즘은 대표적으로 2가지가 있다.<br>
 3. n-1 간선이 선택될 때 까지 2를 반복
 
 <br>
-크루스칼 알고리즘은 간선 중심 그래프로 <a style="color:red"><strong>간선리스트</strong></a>를 만들어야 한다.<br>
+크루스칼 알고리즘은 <a style="color:red"><strong>간선 중심 그래프</strong></a>로 <a style="color:red"><strong>간선리스트</strong></a>를 만들어야 한다.<br>
 그래서 <a style="color:red"><strong>UNION-FIND 알고리즘</strong></a>을 이용해서 트리를 합치고, 부모 정점을 파악하고 사이클 여부를 파악해서 MST를 찾는다.<br><br>
 가장 중요한 것은 <a style="color:red"><strong>사이클을 파악</strong></a>하는 것이다. 사이클이 있으면 MST가 될 수 없다.<br>
 위의 모든 과정을 n-1 간선이 선택될 때까지 진행해서 MST를 찾아주면 된다.
