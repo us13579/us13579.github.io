@@ -40,7 +40,8 @@ sidebar:
 ## <a style="color:#00adb5">SpringBoot</a> 란
 
 SpringBoot가 나오게 된 이유<br>
-`Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can "just run"`<br>
+
+"javaSpring Boot makes it easy to create stand-alone,<br> production-grade Spring based Applications that you can 'just run'"<br>
 스프링 부트는 <a style="color:red"><strong>단지 실행만 하면 되는 스프링 기반의 어플리케이션</strong></a>을 쉽게 만들 수 있다.
 <br>
 Spring의 단점만을 보완해서 만든 것<br>
@@ -60,6 +61,8 @@ SpringBoot starter dependency
 - spring-boot-starter-security : 스프링 시큐리티 ( 인증, 권한 )
 - spring-boot-starter-data-jpa : Spring Data JPA ( Hibernate )
 - spring-boot-starter-cache : 캐시
+
+<a href="https://us13579.github.io/web/SPRINGBOOT/">👉 SPRINGBOOT에 대해 더 자세히 알아보자 !</a>
 
 ## <a style="color:#00adb5">Spring VS SpringBoot</a>
 
