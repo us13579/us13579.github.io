@@ -1,12 +1,12 @@
 ---
 layout: single
-title:  "JAVASCRIPT_DOM"
-categories: 
-    - JAVASCRIPT
-tags: 
-    - [2022-03, JAVASCRIPT, STUDY]
+title: "JAVASCRIPT_DOM"
+categories:
+  - FRONTEND
+tags:
+  - [2022-03, JAVASCRIPT, FRONTEND, STUDY]
 sidebar:
-    nav: "docs"
+  nav: "docs"
 ---
 
 # 📚 <a style="color:#00adb5">JAVASCRIPT</a>
@@ -19,6 +19,7 @@ sidebar:
 # 📚 <a style="color:#00adb5">DOM</a>
 
 ## <a style="color:#00adb5">DOM</a> 이란?
+
 - DOM ( Document Object Model ) 은 <a style="color:red"><strong>HTML과 XML 문서의 구조를 정의하는 API 제공</strong></a>한다.
 - DOM은 문서 요소 집합을 트리 형태의 계층 구조로 HTML을 표현한다.
 - HTML 계층 구조의 제일 위에는 document 노드가 있다.
@@ -29,18 +30,17 @@ sidebar:
 ```html
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> 제목 입니다. </title>
-    </head>
-    <body>
-        <h3>h3 문자열입니다.</h3>
-        <h2>h2 문자열입니다.</h2>
-    </body>
+  <head>
+    <title>제목 입니다.</title>
+  </head>
+  <body>
+    <h3>h3 문자열입니다.</h3>
+    <h2>h2 문자열입니다.</h2>
+  </body>
 </html>
 ```
 
 <p align="center"><img src="./../../images/dom.png" width="100%"></p>
-
 
 ## <a style="color:#00adb5">DOM</a> 문서 계층 구조
 
@@ -51,18 +51,18 @@ sidebar:
 
 <p align="center"><img src="./../../images/domT.png" width="100%"></p>
 
-## <a style="color:#00adb5">문서 객체 만들기</a> 
+## <a style="color:#00adb5">문서 객체 만들기</a>
 
-### <a style="color:#00adb5">문서 객체</a> 
+### <a style="color:#00adb5">문서 객체</a>
 
 - <strong>createElement(tagName)</strong><br>
-element node를 생성한다.
+  element node를 생성한다.
 
 - <strong>createTagNode(text)</strong><br>
-text node를 생성한다.
+  text node를 생성한다.
 
 - <strong>appendChild(node)</strong><br>
-객체에 node를 child로 추가한다.
+  객체에 node를 child로 추가한다.
 
 <br>
 
@@ -81,56 +81,56 @@ text node를 생성한다.
     -> 이 결과는 body에 h2 속성의 "Hello !!"가 출력 된다.
 ```
 
-### <a style="color:#00adb5">객체의 속성 설정</a> 
+### <a style="color:#00adb5">객체의 속성 설정</a>
 
 - <strong>setAttribute(name, value)</strong><br>
-객체의 속성을 지정한다.
+  객체의 속성을 지정한다.
 
 - <strong>getAttribute(name)</strong><br>
-객체의 속성값을 가져온다.
+  객체의 속성값을 가져온다.
 
 <br>
 
 ```javascript
 // 윈도우 페이지가 열리면 함수 실행 한다는 의미이다.
 // 이 방법이 가장 간단한 방법이지만 웹 표준이나 웹 브라우저가 지원하는 태그의 속성만 가능하다 !!
-    window.onload = function(){
-        var profile = document.createElement('img');
-        profile.src = 'profile.png';
-        profile.width = 50;
-        profile.height = 100;
+window.onload = function () {
+  var profile = document.createElement("img");
+  profile.src = "profile.png";
+  profile.width = 50;
+  profile.height = 100;
 
-        document.body.appendChild(profile);
-    }
+  document.body.appendChild(profile);
+};
 
 // 지원하지 않는 태그의 속성도 가능한 방법 !!
-window.onload = function(){
-        var profile = document.createElement('img');
-        profile.setAttribute('src', 'profile.png' );
-        profile.setAttribute('width', 50 );
-        profile.setAttribute('height', 100 );
+window.onload = function () {
+  var profile = document.createElement("img");
+  profile.setAttribute("src", "profile.png");
+  profile.setAttribute("width", 50);
+  profile.setAttribute("height", 100);
 
-        profile.setAttribute('data-content', '내사진');
+  profile.setAttribute("data-content", "내사진");
 
-        document.body.appendChild(profile);
-    }
+  document.body.appendChild(profile);
+};
 ```
 
-### <a style="color:#00adb5">innerHTML & innerText</a> 
+### <a style="color:#00adb5">innerHTML & innerText</a>
 
 - <strong>innerHTML</strong><br>
-문자열을 HTML 태그로 삽입한다.
+  문자열을 HTML 태그로 삽입한다.
 
 - <strong>innerText</strong><br>
-문자열을 text node로 삽입한다.
+  문자열을 text node로 삽입한다.
 
 <br>
 
 ```javascript
 window.onload = function(){
-        var html = document.getElementById('divHtml');        
+        var html = document.getElementById('divHtml');
         var text = document.getElementById('divText');
-        
+
         html.innerHTML = "<h2> Hello !! </h2>"
         text.innerText = "<h2> Hello !! </h2>"
 
@@ -139,14 +139,12 @@ window.onload = function(){
     }
 ```
 
+## <a style="color:#00adb5">문서 객체 가져오기</a>
 
-
-## <a style="color:#00adb5">문서 객체 가져오기</a> 
-
-### <a style="color:#00adb5">객체 가져오기</a> 
+### <a style="color:#00adb5">객체 가져오기</a>
 
 - getElementById(id)<br>
-태그의 <strong>id</strong> 속성이 id 와 일치하는 element <a style="color:red">객체</a> 얻기
+  태그의 <strong>id</strong> 속성이 id 와 일치하는 element <a style="color:red">객체</a> 얻기
 
 <br>
 
@@ -165,11 +163,11 @@ window.onload = function(){
 
     -> hi !!! 가 출력된다.
 ```
+
 <br>
 
-
 - getElementsByClassName(classname)<br>
-태그의 <strong>classname</strong> 속성이 classname 과 일치하는 element <a style="color:red">배열</a>  얻기
+  태그의 <strong>classname</strong> 속성이 classname 과 일치하는 element <a style="color:red">배열</a> 얻기
 
 <br>
 
@@ -188,10 +186,11 @@ window.onload = function(){
 
     -> hello!! 가 배경이 빨간색으로 출력된다.
 ```
+
 <br>
 
 - getElementsByTagName(tagname)<br>
-태그이름이 <strong>tagname</strong> 과 일치하는 element <a style="color:red">배열</a>  얻기
+  태그이름이 <strong>tagname</strong> 과 일치하는 element <a style="color:red">배열</a> 얻기
 
 <br>
 
@@ -210,18 +209,18 @@ window.onload = function(){
 
     -> hello!! 가 배경이 빨간색으로 출력된다.
 ```
-<br>
 
+<br>
 
 - getElementsByName(name)<br>
-태그의 <strong>name</strong> 속성이 name 과 일치하는 element <a style="color:red">배열</a>  얻기
+  태그의 <strong>name</strong> 속성이 name 과 일치하는 element <a style="color:red">배열</a> 얻기
 
 - querySelector(selector)<br>
-<strong>selector</strong>에 일치하는 첫번째 element <a style="color:red">객체</a> 얻기<br>
-class 는 querySelector('.className');<br>
-id 는 querySelector('#IDName');<br>
-대문자로 받는 방법은 querySelector('h2[id=head]'); 이 있다. 이 경우는 이름에 언더바가 있는 경우에 사용한다.
-<br>
+  <strong>selector</strong>에 일치하는 첫번째 element <a style="color:red">객체</a> 얻기<br>
+  class 는 querySelector('.className');<br>
+  id 는 querySelector('#IDName');<br>
+  대문자로 받는 방법은 querySelector('h2[id=head]'); 이 있다. 이 경우는 이름에 언더바가 있는 경우에 사용한다.
+  <br>
 
 ```html
 <script type="text/javascript">
@@ -238,10 +237,11 @@ id 는 querySelector('#IDName');<br>
 
     -> hi !!! 가 출력된다.
 ```
+
 <br>
 
 - querySelectorAll(selector)<br>
-<strong>selector</strong>에 일치하는 모든 element <a style="color:red">배열</a> 얻기
+  <strong>selector</strong>에 일치하는 모든 element <a style="color:red">배열</a> 얻기
 
 <br>
 
@@ -262,40 +262,41 @@ id 는 querySelector('#IDName');<br>
 
     -> hello 1, hello 2, hello 3 이 배경이 빨간색으로 출력된다.
 ```
+
 <br>
 
-## <a style="color:#00adb5">문서 객체 제거하기</a> 
+## <a style="color:#00adb5">문서 객체 제거하기</a>
 
-### <a style="color:#00adb5">객체 제거</a> 
+### <a style="color:#00adb5">객체 제거</a>
 
 - <strong>removeChild(childnode)</strong><br>
-객체의 자식 노드를 제거한다.
+  객체의 자식 노드를 제거한다.
 
 <br>
 
 ```html
 <head>
-<script type = "text/javascript">
-    window.onload = function(){
-        var input4 = document.querySelector("#input4");
+  <script type="text/javascript">
+    window.onload = function () {
+      var input4 = document.querySelector("#input4");
 
-        document.body.removeChild(input4);
+      document.body.removeChild(input4);
     };
-    </script>
-    </head>
-    <body>
-        <h2 id="input1">input1</h2>
-        <h2 id="input2">input2</h2>
-        <h2 id="input3">input3</h2>
-        <h2 id="input4">input4</h2>
+  </script>
+</head>
+<body>
+  <h2 id="input1">input1</h2>
+  <h2 id="input2">input2</h2>
+  <h2 id="input3">input3</h2>
+  <h2 id="input4">input4</h2>
 </body>
 
 // input4 는 출력되지 않는다
 ```
 
 ## <a style="color:#00adb5">DOM</a> 마무리
+
 JavaScript에서 중요한 부분인 DOM 에 대해서 공부를 하였다.<br>
 HTML에서 작성한 코드를 동적으로 실행하려면 id나 class를 가져와서 DOM의 API를 이용해 실행해준다. <br>
 그리고 객체를 가져올 때 getElement 와 querySelect 중 하나를 선택하는 것이 나은데 교수님은 querySelect를 추천해 주셨다 ㅎㅎ <br>
 객체를 가져와서 동작을 시키거나 객체의 속성을 생성, 변경하거나 여러가지를 DOM을 통해 하니까 DOM API에 대해 잘 알아 두어야 할 것 같다 !!
-
