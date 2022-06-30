@@ -5,7 +5,6 @@ main:
   - title: "Tag"
     url: /tag/
 
-
 docs:
   - title: "RECORD"
     children:
@@ -17,29 +16,23 @@ docs:
         category: "BLOG"
   - title: "FrontEnd"
     children:
-    - title: "HTML"
-      url: /category/HTML/
-      category: "HTML"
-    - title: "CSS"
-      url: /category/CSS/
-      category: "CSS"
-    - title: "JAVA SCRIPT"
-      url: /category/JAVASCRIPT/
-      category: "JAVASCRIPT"
+      - title: "FRONTEND"
+        url: /category/FRONTEND/
+        category: "FRONTEND"
   - title: "BackEnd"
     children:
-    - title: "WEB"
-      url: /category/WEB/
-      category: "WEB"
-    - title: "JAVA"
-      url: /category/JAVA/
-      category: "JAVA"
-    - title: "DATABASE"
-      url: /category/DATABASE/
-      category: "DATABASE"
-    - title: "ALGORITHM"
-      url: /category/ALGORITHM/
-      category: "ALGORITHM"
+      - title: "WEB"
+        url: /category/WEB/
+        category: "WEB"
+      - title: "JAVA"
+        url: /category/JAVA/
+        category: "JAVA"
+      - title: "DATABASE"
+        url: /category/DATABASE/
+        category: "DATABASE"
+      - title: "ALGORITHM"
+        url: /category/ALGORITHM/
+        category: "ALGORITHM"
   - title: "Coding Test"
     children:
       - title: "BOJ"
@@ -51,6 +44,4 @@ docs:
       - title: "PROGRAMMERS"
         url: /category/PROGRAMMERS/
         category: "PROGRAMMERS"
-
- 
-        
+  - title: "CS STUDY"
