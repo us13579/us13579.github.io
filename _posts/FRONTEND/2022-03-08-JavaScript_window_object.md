@@ -2,9 +2,9 @@
 layout: single
 title: "JAVASCRIPT_Window 객체"
 categories:
-  - JAVASCRIPT
+  - FRONTEND
 tags:
-  - [2022-03, JAVASCRIPT, STUDY]
+  - [2022-03, JAVASCRIPT, FRONTEND, STUDY]
 sidebar:
   nav: "docs"
 ---

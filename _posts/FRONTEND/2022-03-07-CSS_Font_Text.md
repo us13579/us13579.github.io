@@ -1,12 +1,12 @@
 ---
 layout: single
-title:  "CSS_Font & Text"
-categories: 
-    - CSS
-tags: 
-    - [2022-03, CSS, STUDY]
+title: "CSS_Font & Text"
+categories:
+  - FRONTEND
+tags:
+  - [2022-03, CSS, FRONTEND, STUDY]
 sidebar:
-    nav: "docs"
+  nav: "docs"
 ---
 
 # 📚 <a style="color:#00adb5">CSS</a>
@@ -19,9 +19,11 @@ sidebar:
 # 📚 <a style="color:#00adb5">Font & Text</a>
 
 ## <a style="color:#00adb5">CSS</a> Font
+
 CSS Font 관련 속성은 text의 글꼴, 굵기, 크기, 스타일등을 지정한다.<br>
 
 ### <a style="color:#00adb5">font-family</a>
+
 - <a style="color:red"><strong>글꼴 지정</strong></a>
 - 사용법은 " E { font-family: 글꼴이름, 글꼴이름, ... }" 이다.
 - generic font명을 뒤에 작성하는 것이 일반적이다.
@@ -37,12 +39,12 @@ CSS Font 관련 속성은 text의 글꼴, 굵기, 크기, 스타일등을 지정
 ```
 
 ### <a style="color:#00adb5">font-size</a>
+
 - <a style="color:red"><strong>글자 크기 지정</strong></a>
 - 사용법 " E { font-size: 속성 값 } " 이다.
 - 절대 사이즈 속성 값은 xx-small, x-small, small, medium, large, x-large, xx-large가 있다.
 - 상대 사이즈 속성 값은 larger, smaller이 있다.
 - 그 외 px, cm, % ( 부모 엘리먼트와의 비율 ) 단위도 사용 가능
-
 
 ```html
 <style type="text/css">
@@ -58,13 +60,12 @@ CSS Font 관련 속성은 text의 글꼴, 굵기, 크기, 스타일등을 지정
 </body>
 ```
 
-
 ### <a style="color:#00adb5">font-style</a>
+
 - <a style="color:red"><strong>글자 스타일 지정</strong></a>
 - 사용법 " E { font-style: normal / italic / oblique } " 이다.
 - 속성값은 normal, italic, oblique 가 있고 기본값은 normal이다.
 - italic, oblique 둘다 기울임인데 italic은 디자이너에 의해 디자인된 특수한 글꼴이고 oblique는 일반 글자를 8~12eh 정도 기울여서 표시한 것이다.
-
 
 ```html
 <style type="text/css">
@@ -80,12 +81,11 @@ CSS Font 관련 속성은 text의 글꼴, 굵기, 크기, 스타일등을 지정
 </body>
 ```
 
-
 ### <a style="color:#00adb5">font-variant</a>
+
 - <a style="color:red"><strong>소문자를 작은 대문자로 변형</strong></a>
 - 사용법 " E { font-variant: normal / small-caps }" 이다.
 - 소문자를 작은 대문자로 변환, 초기값은 normal이며 한글은 변화가 없다.
-
 
 ```html
 <style type="text/css">
@@ -97,12 +97,11 @@ CSS Font 관련 속성은 text의 글꼴, 굵기, 크기, 스타일등을 지정
 </body>
 ```
 
-
 ### <a style="color:#00adb5">font-weight</a>
+
 - <a style="color:red"><strong>글자 굵기 지정</strong></a>
 - 사용법 " E { font-weight: normal / bold / bolder / lighter }" 이다.
 - 초기값은 normal이며, 100~900까지 숫자값으로 사용가능 ( normal : 400 , bold : 700 )
-
 
 ```html
 <style type="text/css">
@@ -118,8 +117,8 @@ CSS Font 관련 속성은 text의 글꼴, 굵기, 크기, 스타일등을 지정
 </body>
 ```
 
-
 ### <a style="color:#00adb5">font</a>
+
 - <a style="color:red"><strong>font에 관한 속성을 한번에 지정하는 단축형 속성이다.</strong></a>
 - 속성 값은 style, variant, weight, size/line-height, family 순으로 작성한다.
 - size와 family는 필수 값이며 생략 시 기본 값이 적용된다.
@@ -135,12 +134,12 @@ CSS Font 관련 속성은 text의 글꼴, 굵기, 크기, 스타일등을 지정
 </body>
 ```
 
-
-
 ## <a style="color:#00adb5">CSS</a> Text
+
 CSS Text 관련 속성은 글자, 공간, 문단들이 보여지는 속성을 정의한다.
 
 ### <a style="color:#00adb5">text-align</a>
+
 - <a style="color:red"><strong>text 정렬 방식 지정</strong></a>
 - 사용법은 " E { text-align: left / right / center / justify } " 이다.
 - justify는 각 라인의 너비가 모두 동일하도록 간격을 늘린다.
@@ -159,6 +158,7 @@ CSS Text 관련 속성은 글자, 공간, 문단들이 보여지는 속성을 �
 ```
 
 ### <a style="color:#00adb5">text-decoration</a>
+
 - <a style="color:red"><strong>text 장식 지정</strong></a>
 - 사용법은 " E { text-decoration: none / underline / overline / line-through / blink } " 이다.
 - underline은 밑줄을 생성 한다.
@@ -185,6 +185,7 @@ CSS Text 관련 속성은 글자, 공간, 문단들이 보여지는 속성을 �
 ```
 
 ### <a style="color:#00adb5">text-indent</a>
+
 - <a style="color:red"><strong>Text-block인 첫 라인의 들여쓰기 지정</strong></a>
 - 사용법은 " E { text-indent: 절대 값(px, pt, em, em etc) / 배율 % } " 이다.
 - 절대 값의 기본 값은 0 이다.
@@ -194,7 +195,7 @@ CSS Text 관련 속성은 글자, 공간, 문단들이 보여지는 속성을 �
 ```html
 <style type = "text/css">
     p.positive { text-indent: 1cm; }
-    p.negatvie { text-indent: -5px; }    
+    p.negatvie { text-indent: -5px; }
     </style>
     </head>
     <body>
@@ -210,15 +211,16 @@ CSS Text 관련 속성은 글자, 공간, 문단들이 보여지는 속성을 �
 ```
 
 ### <a style="color:#00adb5">text-transform</a>
+
 - <a style="color:red"><strong>text 대문자화</strong></a>
 - 사용법은 " E { text-transform: capitalize / uppercase / lowercase / none } " 이다.
 - capitalize 는 첫 글자를 대문자로, uppercase 는 글자 전체를 대문자로, lowercase 는 글자 전체를 소문자로 바꿔준다.
 
 ```html
 <style type = "text/css">
-    .capitalize { text-transform: capitalize; }   
-    .uppercase { text-transform: uppercase; }   
-    .lowercase { text-transform: lowercase; }   
+    .capitalize { text-transform: capitalize; }
+    .uppercase { text-transform: uppercase; }
+    .lowercase { text-transform: lowercase; }
     </style>
     </head>
     <body>
@@ -234,8 +236,8 @@ CSS Text 관련 속성은 글자, 공간, 문단들이 보여지는 속성을 �
     </body>
 ```
 
-
 ### <a style="color:#00adb5">white-space</a>
+
 - <a style="color:red"><strong>엘리먼트 안의 공백 지정</strong></a>
 - 사용법은 " E { white-space: normal / pre / nowrap / pre-line / pre-wrap } " 이다.
 - normal은 정해진 영역에 따라 줄이 바뀌며, 하나의 whitespace만 허용한다.
@@ -244,13 +246,13 @@ CSS Text 관련 속성은 글자, 공간, 문단들이 보여지는 속성을 �
 
 ```html
 <style type = "text/css">
-        .white1 { white-space: normal; }   
-        .white2 { white-space: pre; }   
-        .white3 { white-space: nowrap; }   
+        .white1 { white-space: normal; }
+        .white2 { white-space: pre; }
+        .white3 { white-space: nowrap; }
         </style>
         </head>
         <body>
-            <!-- 마우스를 위에 올리면 white2 실행 
+            <!-- 마우스를 위에 올리면 white2 실행
                  마우스를 누르면 white3 실행
                  다시 돌아오면 white1 실행 -->
             <p class= "white1"
@@ -263,8 +265,8 @@ CSS Text 관련 속성은 글자, 공간, 문단들이 보여지는 속성을 �
         </body>
 ```
 
-
 ### <a style="color:#00adb5">letter-spacing</a>
+
 - <a style="color:red"><strong>문자 간의 space 간격을 줄이거나 늘림</strong></a>
 - 사용법은 " E { letter-spacing: normal / 길이 값 ( length )} " 이다.
 - 간격을 늘릴 때는 양수, 줄일 때는 음수 사용
@@ -280,6 +282,7 @@ CSS Text 관련 속성은 글자, 공간, 문단들이 보여지는 속성을 �
 ```
 
 ### <a style="color:#00adb5">word-spacing</a>
+
 - <a style="color:red"><strong>단어 간의 간격 지정</strong></a>
 - 사용법은 " E { word-spacing : normal / 길이 값 ( length )} " 이다.
 
@@ -294,8 +297,9 @@ CSS Text 관련 속성은 글자, 공간, 문단들이 보여지는 속성을 �
 ```
 
 ### <a style="color:#00adb5">line-height</a>
+
 - <a style="color:red"><strong>줄(행) 간격 지정</strong></a>
-- 사용법은 " E { line-height: 상대 값 / 절대 값 / 비율 } " 이다. 
+- 사용법은 " E { line-height: 상대 값 / 절대 값 / 비율 } " 이다.
 - 비율 값을 사용하면 현재 글자 크기를 기본으로 50%, 200% 같은 비율로 행 간격을 설정한다.
 - 절대 값을 사용하면 행 간격을 px, cm 등으로 직접 설정한다.
 - 상대 값을 사용하면 현재 글자 크기에 상대 값을 곱한 수 만큼 행 간격을 설정할 수 있다.
@@ -314,10 +318,8 @@ CSS Text 관련 속성은 글자, 공간, 문단들이 보여지는 속성을 �
         </body>
 ```
 
-
-
 ## <a style="color:#00adb5">CSS</a> Font & Text 마무리
+
 CSS 에서 사용 되는 Font와 Text에 대해서 알아 보았다.<br>
 많은 속성들이 있는데 어려운 것들은 없어서 이런게 있구나 하고 넘어갔다.<br>
 그래도 정리를 한번 함으로써 나중에 사용할 때 좀 더 편할 것 같다는 생각이 들었다. 그리고 실습들을 해봄으로써 어떤 속성들인지 알게 된 것 같다.
-
