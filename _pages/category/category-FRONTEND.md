@@ -1,13 +1,13 @@
 ---
-title: "JAVA_SCRIPT"
+title: "FRONTEND"
 layout: archive
-categories: JAVASCRIPT
-permalink: /category/JAVASCRIPT/
+categories: FRONTEND
+permalink: /category/FRONTEND/
 author_profile: true
 sidebar:
 nav: "docs"
-taxonomy: JAVASCRIPT
+taxonomy: FRONTEND
 ---
 
-{% assign posts = site.categories.JAVASCRIPT %}
+{% assign posts = site.categories.FRONTEND %}
 {% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}
