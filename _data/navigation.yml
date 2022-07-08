@@ -46,10 +46,10 @@ docs:
         category: "PROGRAMMERS"
   - title: "CS STUDY"
     children:
-      - title: "이산 수학"
+      - title: "이산수학"
         url: /category/MATH/
         category: "MATH"
-      - title: "컴퓨터 구조"
+      - title: "컴퓨터구조"
         url: /category/ARCHITECTURE/
         category: "ARCHITECTURE"
       - title: "운영체제"
