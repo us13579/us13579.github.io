@@ -1,5 +1,5 @@
 ---
-title: "운영체제"
+title: "OS"
 layout: archive
 categories: OS
 permalink: /category/OS/

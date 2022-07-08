@@ -1,5 +1,5 @@
 ---
-title: "네트워크"
+title: "NETWORK"
 layout: archive
 categories: NETWORK
 permalink: /category/NETWORK/
