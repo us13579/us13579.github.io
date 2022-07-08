@@ -1,5 +1,5 @@
 ---
-title: "이산수학"
+title: "MATH"
 layout: archive
 categories: MATH
 permalink: /category/MATH/

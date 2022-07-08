@@ -1,5 +1,5 @@
 ---
-title: "컴퓨터구조"
+title: "ARCHITECTURE"
 layout: archive
 categories: ARCHITECTURE
 permalink: /category/ARCHITECTURE/
