@@ -56,5 +56,5 @@ docs:
         url: /category/OS/
         category: "OS"
       - title: "네트워크"
-      url: /category/NETWORK/
-      category: "NETWORK"
+        url: /category/NETWORK/
+        category: "NETWORK"
