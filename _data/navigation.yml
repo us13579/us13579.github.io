@@ -11,9 +11,9 @@ docs:
       - title: "TIL"
         url: /category/TIL/
         category: "TIL"
-      - title: "BLOG"
-        url: /category/BLOG/
-        category: "BLOG"
+      - title: "STUDY"
+        url: /category/STUDY/
+        category: "STUDY"
   - title: "FrontEnd"
     children:
       - title: "FRONTEND"

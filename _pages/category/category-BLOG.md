@@ -1,13 +1,13 @@
 ---
-title: "BLOG"
+title: "STUDY"
 layout: archive
-categories: BLOG
-permalink: /category/BLOG/
+categories: STUDY
+permalink: /category/STUDY/
 author_profile: true
 sidebar:
 nav: "docs"
-taxonomy: BLOG
+taxonomy: STUDY
 ---
 
-{% assign posts = site.categories.BLOG %}
+{% assign posts = site.categories.STUDY %}
 {% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}
